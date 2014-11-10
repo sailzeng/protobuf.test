@@ -1,0 +1,31 @@
+//option optimize_for = LITE_RUNTIME;
+
+message Person 
+{
+	enum PhoneType 
+	{
+		MOBILE = 0;
+		HOME = 1;
+		WORK = 2;
+	}
+
+	message PhoneNumber 
+	{
+		optional PhoneType type = 1 [default = HOME];
+		required string number = 2;
+	}
+	
+	required int32 id = 1;
+	required string name = 2;
+	optional string email = 3;
+	repeated PhoneNumber phone = 4;
+
+	repeated int32 classid =5;
+}
+
+message SchoolClass
+{
+	repeated Person class_teacher_ = 1;
+	repeated Person student_ = 2 ;
+}
+

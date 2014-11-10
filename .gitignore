@@ -1,0 +1,45 @@
+# Compiled Object files
+obj
+*.slo
+*.lo
+*.o
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+
+*.lib
+*.exe
+*.dll
+
+*.idb
+*.pdb
+*.ilk
+*.lastbuildstate
+
+*.sdf
+*.opensdf
+
+*.suo
+*.obj
+*.ncb
+
+log
+*.log
+
+*.tlog
+*.pch
+*.ipch
+
+*.gch
+*~
+
+*.pid
+*.MMAP
+
+*.aps
