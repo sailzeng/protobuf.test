@@ -6,7 +6,7 @@
 #include <google/protobuf/descriptor.h>
 #include <google/protobuf/descriptor.pb.h>
 #include <google/protobuf/dynamic_message.h>
-
+#include <google/protobuf/compiler/importer.h>
 
 #include "student_01.pb.h"
 
@@ -62,22 +62,51 @@ int test_main1(int argc, char *argv[])
 }
 
 
-int test_main2(int argc, char *argv[])
+
+
+int main(int argc, const char *argv[])
 {
+    google::protobuf::compiler::DiskSourceTree sourceTree;
+    //look up .proto file in current directory
+    sourceTree.MapPath("", "./");
+    google::protobuf::compiler::Importer importer(&sourceTree, NULL);
+    //runtime compile foo.proto
+    importer.Import("foo.proto");
+
+    const google::protobuf::Descriptor *descriptor = importer.pool()->FindMessageTypeByName("Pair");
+    std::cout << descriptor->DebugString();
+
+    // build a dynamic message by "Pair" proto
+    google::protobuf::DynamicMessageFactory factory;
+    const google::protobuf::Message *message = factory.GetPrototype(descriptor);
+    // create a real instance of "Pair"
+    google::protobuf::Message *pair = message->New();
+
+    // write the "Pair" instance by reflection
+    const google::protobuf::Reflection *reflection = pair->GetReflection();
+
+    const google::protobuf::FieldDescriptor *field = NULL;
+    field = descriptor->FindFieldByName("key");
+    reflection->SetString(pair, field, "my key");
+    field = descriptor->FindFieldByName("value");
+    reflection->SetUInt32(pair, field, 1111);
+
+    std::cout << pair->DebugString();
+
+    delete pair;
 
     return 0;
 }
 
 
-
-int main(int argc, char *argv[])
+int test_main2(int argc, char *argv[])
 {
     Person p;
     p.set_id(1);
     p.set_name("JiaJia");
     p.set_email("JiaJia@qq.com");
 
-    
+
 
     Person::PhoneNumber *ptr_pn = NULL;
 
@@ -97,10 +126,10 @@ int main(int argc, char *argv[])
     p.SerializeToOstream(&output_f);
 
     std::string out_str;
-    google::protobuf::TextFormat::PrintToString(p,&out_str);
+    google::protobuf::TextFormat::PrintToString(p, &out_str);
 
     std::cout << out_str.c_str() << std::endl;
-    
+
 
     return 0;
 }
