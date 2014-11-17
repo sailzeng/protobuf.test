@@ -11,9 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{F482B227-5E0F-4817-8697-0331B490038E}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>protobuftest</RootNamespace>
+    <ProjectGuid>{7C32B51E-3B97-4886-AAF2-1E1796595018}</ProjectGuid>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -80,14 +80,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="proto_test_01.cpp" />
-    <ClCompile Include="student_01.pb.cc" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="student_01.pb.h" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="proto\student_01.proto" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="proto_test_02.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

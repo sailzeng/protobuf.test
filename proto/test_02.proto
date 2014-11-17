@@ -1,0 +1,46 @@
+//option optimize_for = LITE_RUNTIME;
+
+
+package N01
+{
+
+message S1
+{
+	repeated int32 s1_a = 1;
+	repeated int32 s1_b = 2 ;
+}
+
+message S2
+{
+	repeated int32 s2_a = 1;
+	repeated string s2_b = 2 ;
+}
+
+
+
+message  S3
+{
+	enum E1 
+	{
+		E1_A = 0;
+		E1_B = 1;
+		E1_C = 2;
+	}
+
+	message S4
+	{
+		optional E1 s4_a = 1 [default = E1_A];
+		required string s4_b = 2;
+	}
+	
+	required int32 s3_a = 1;
+	required string s3_b = 2;
+	optional string s3_c = 3;
+	repeated S1 s3_d = 4;
+	required S3 s3_e = 5;
+	repeated S4 s3_f = 6;
+	
+}
+
+
+}
