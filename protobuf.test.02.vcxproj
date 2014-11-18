@@ -80,10 +80,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <None Include="proto\student_01.proto" />
+    <ClCompile Include="proto_test_02.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="proto_test_02.cpp" />
+    <None Include="proto\test_02.proto" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

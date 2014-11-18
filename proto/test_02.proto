@@ -1,8 +1,6 @@
 //option optimize_for = LITE_RUNTIME;
 
-
-package N01
-{
+package N01.N02;
 
 message S1
 {
@@ -15,8 +13,6 @@ message S2
 	repeated int32 s2_a = 1;
 	repeated string s2_b = 2 ;
 }
-
-
 
 message  S3
 {
@@ -40,7 +36,4 @@ message  S3
 	required S3 s3_e = 5;
 	repeated S4 s3_f = 6;
 	
-}
-
-
 }

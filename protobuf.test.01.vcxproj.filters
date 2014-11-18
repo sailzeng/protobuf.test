@@ -23,9 +23,4 @@
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="proto\student_01.proto">
-      <Filter>Resource Files</Filter>
-    </None>
-  </ItemGroup>
 </Project>
