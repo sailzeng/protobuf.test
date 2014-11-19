@@ -47,21 +47,60 @@ int main(int argc, const char *argv[])
     // build a dynamic message by "Pair" proto
     google::protobuf::DynamicMessageFactory factory;
     const google::protobuf::Message *message = factory.GetPrototype(desc_s3);
-    // create a real instance of "Pair"
-    google::protobuf::Message *pair = message->New();
+
+    // create a real instance of "S3"
+    google::protobuf::Message *message_s3 = message->New();
 
     // write the "Pair" instance by reflection
-    const google::protobuf::Reflection *reflection = pair->GetReflection();
+    const google::protobuf::Reflection *reflection = message_s3->GetReflection();
 
     const google::protobuf::FieldDescriptor *field = NULL;
-    field = desc_s3->FindFieldByName("key");
-    reflection->SetString(pair, field, "my key");
-    field = desc_s3->FindFieldByName("value");
-    reflection->SetUInt32(pair, field, 1111);
+    field = desc_s3->FindFieldByName("s3_a");
+    if (field->type() == google::protobuf::FieldDescriptor::Type::TYPE_INT32)
+    {
+        reflection->SetInt32(message_s3, field, 0x1234);
+    }
+    else
+    {
+        assert(false);
+    }
+    
+    field = desc_s3->FindFieldByName("s3_b");
+    if (field->type() == google::protobuf::FieldDescriptor::Type::TYPE_STRING)
+    {
+        reflection->SetString(message_s3, field, "My god.!I love you.");
+    }
+    else
+    {
+        assert(false);
+    }
 
-    std::cout << pair->DebugString();
+    field = desc_s3->FindFieldByName("s3_c");
+    if (field->type() == google::protobuf::FieldDescriptor::Type::TYPE_STRING)
+    {
+        reflection->SetString(message_s3, field, "My sadan.!I hate you.");
+    }
+    else
+    {
+        assert(false);
+    }
 
-    delete pair;
+    
+    field = desc_s3->FindFieldByName("s3_d");
+    if (field->type() == google::protobuf::FieldDescriptor::Type::TYPE_MESSAGE)
+    {
+        reflection->AddMessage(message_s3, field, NULL);
+    }
+    else
+    {
+        assert(false);
+    }
+
+
+    std::cout << desc_s3->DebugString();
+
+    delete desc_s3;
+    desc_s3 = NULL;
 
     return 0;
 }

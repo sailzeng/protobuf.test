@@ -33,7 +33,7 @@ message  S3
 	required string s3_b = 2;
 	optional string s3_c = 3;
 	repeated S1 s3_d = 4;
-	required S3 s3_e = 5;
+	required S2 s3_e = 5;
 	repeated S4 s3_f = 6;
 	
 }
