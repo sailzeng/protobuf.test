@@ -4,13 +4,13 @@ package N01.N02;
 
 message S1
 {
-	repeated int32 s1_a = 1;
-	repeated int32 s1_b = 2 ;
+	required int32 s1_a = 1;
+	required int32 s1_b = 2 ;
 }
 
 message S2
 {
-	repeated int32 s2_a = 1;
+	required int32 s2_a = 1;
 	repeated string s2_b = 2 ;
 }
 
@@ -32,8 +32,8 @@ message  S3
 	required int32 s3_a = 1;
 	required string s3_b = 2;
 	optional string s3_c = 3;
-	repeated S1 s3_d = 4;
-	required S2 s3_e = 5;
-	repeated S4 s3_f = 6;
+	repeated int64 s3_d = 4;
+	repeated S1 s3_e = 5;
+	required S2 s3_f = 6;
 	
 }
