@@ -114,26 +114,23 @@ int main(int argc, const char *argv[])
 
         const google::protobuf::Descriptor *desc_s1 = NULL;
         desc_s1 = message_s1->GetDescriptor();
-        reflection = message_s1->GetReflection();
         
         field = desc_s1->FindFieldByName("s1_a");
-        reflection->SetInt32(message_s1, field, 0x1000A);
+        message_s1->GetReflection()->SetInt32(message_s1, field, 0x1000A);
 
         field = desc_s1->FindFieldByName("s1_b");
-        reflection->SetInt32(message_s1, field, 0x1000B);
+        message_s1->GetReflection()->SetInt32(message_s1, field, 0x1000B);
 
 
-        
         message_s1 = reflection->AddMessage(message_s3, field_s3_e, NULL);
 
         desc_s1 = message_s1->GetDescriptor();
-        reflection = message_s1->GetReflection();
 
         field = desc_s1->FindFieldByName("s1_a");
-        reflection->SetInt32(message_s1, field, 0x1000A);
+        message_s1->GetReflection()->SetInt32(message_s1, field, 0x2000A);
 
         field = desc_s1->FindFieldByName("s1_b");
-        reflection->SetInt32(message_s1, field, 0x1000B);
+        message_s1->GetReflection()->SetInt32(message_s1, field, 0x2000B);
 
 
     }
@@ -154,15 +151,70 @@ int main(int argc, const char *argv[])
         desc_s2 = message_s2->GetDescriptor();
 
         field = desc_s2->FindFieldByName("s2_a");
-        reflection->SetInt32(message_s2, field, 0x1000A);
+        message_s2->GetReflection()->SetInt32(message_s2, field, 0x1000A);
 
         field = desc_s2->FindFieldByName("s2_b");
-        reflection->SetString(message_s2, field, "AAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+        message_s2->GetReflection()->AddString(message_s2, field, "AAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+        message_s2->GetReflection()->AddString(message_s2, field, "BBBBBBBBBBBBBBBBBBBBBBBBBBBB");
+        message_s2->GetReflection()->AddString(message_s2, field, "CCCCCCCCCCCCCCCCCCCCCCCCCCCCCC");
 
     }
     else
     {
         assert(false);
+    }
+
+    const google::protobuf::FieldDescriptor *field_s3_g = NULL;
+    field_s3_g = desc_s3->FindFieldByName("s3_g");
+    if (field_s3_g &&
+        field_s3_g->type() == google::protobuf::FieldDescriptor::Type::TYPE_MESSAGE &&
+        field_s3_g->label() == google::protobuf::FieldDescriptor::Label::LABEL_REPEATED)
+    {
+        google::protobuf::Message *message_s4 = NULL;
+        message_s4 = reflection->AddMessage(message_s3, field_s3_g, NULL);
+
+        const google::protobuf::Descriptor *desc_s4 = NULL;
+        desc_s4 = message_s4->GetDescriptor();
+
+        field = desc_s4->FindFieldByName("s4_a");
+
+        if (field &&
+            field->type() == google::protobuf::FieldDescriptor::Type::TYPE_ENUM)
+        {
+            
+            const google::protobuf::EnumDescriptor *enum_desc = 
+                field->enum_type();
+
+            const google::protobuf::EnumValueDescriptor *ea_desc = enum_desc->FindValueByName("E1_B");
+            message_s4->GetReflection()->SetEnum(message_s4, field, ea_desc);
+
+
+        }
+        else
+        {
+            assert(false);
+        }
+
+        field = desc_s4->FindFieldByName("s4_b");
+        message_s4->GetReflection()->SetString(message_s4, field, "SBSBSBSB");
+
+
+        message_s4 = reflection->AddMessage(message_s3, field_s3_g, NULL);
+        field = desc_s4->FindFieldByName("s4_b");
+        message_s4->GetReflection()->SetString(message_s4, field, "BSBSBSBSBS");
+    }
+    else
+    {
+        assert(false);
+    }
+
+    if (message_s3->IsInitialized())
+    {
+        std::cout << "S3 is Initialized" << std::endl;
+    }
+    else
+    {
+        std::cout << "S3 is Loser" << std::endl;
     }
 
     std::cout << message_s3->DebugString();

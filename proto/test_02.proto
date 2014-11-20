@@ -35,5 +35,5 @@ message  S3
 	repeated int64 s3_d = 4;
 	repeated S1 s3_e = 5;
 	required S2 s3_f = 6;
-	
+	repeated S4 s3_g = 7;
 }
