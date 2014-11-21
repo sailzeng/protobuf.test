@@ -1,0 +1,28 @@
+//option optimize_for = LITE_RUNTIME;
+
+
+
+message S1
+{
+	optional int32 s1_a = 1;
+	optional int32 s1_b = 2 ;
+	optional int32 s1_c = 3;
+	optional int32 s1_d = 4 ;
+	optional int32 s1_e = 5;
+	optional int32 s1_f = 6 ;
+	optional int32 s1_g = 7;
+	optional int32 s1_h = 8 ;
+	optional int32 s1_i = 9;
+	optional int32 s1_j = 10 ;
+	optional int32 s1_k = 11;
+	optional int32 s1_l = 12 ;
+	optional int32 s1_m = 13;
+	optional int32 s1_n = 14;
+	optional int32 s1_o = 15;
+	optional int32 s1_p = 16;
+	optional int32 s1_q = 17;
+	optional int32 s1_r = 18;
+	optional int32 s1_s = 19;
+	optional int32 s1_t = 20;
+}
+

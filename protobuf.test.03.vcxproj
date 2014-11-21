@@ -10,10 +10,20 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="proto\pb_test_03.proto" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pb_test_03.pb.cc" />
+    <ClCompile Include="proto_test_03.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pb_test_03.pb.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{F482B227-5E0F-4817-8697-0331B490038E}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>protobuftest</RootNamespace>
+    <ProjectGuid>{48AE6C88-AC84-4E2E-8C60-CAFE2ACEF791}</ProjectGuid>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -42,12 +52,10 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <IncludePath>$(IncludePath)</IncludePath>
-    <LibraryPath>$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <IncludePath>$(IncludePath)</IncludePath>
-    <LibraryPath>$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -81,16 +89,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="pb_test_01.pb.cc" />
-    <ClCompile Include="proto_test_01.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="proto\pb_test_01.proto" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="pb_test_01.pb.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

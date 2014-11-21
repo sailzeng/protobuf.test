@@ -10,12 +10,8 @@
 #include <google/protobuf/text_format.h>
 
 
+#pragma comment (lib, "libprotobuf.lib" )
 
-#if defined _DEBUG 
-#pragma comment (lib, "Win32-v120-Debug/libprotobuf.lib" )
-#else
-#pragma comment (lib, "Win32-v120-Release/libprotobuf.lib" )
-#endif
 
 int main(int argc, const char *argv[])
 {
@@ -27,7 +23,7 @@ int main(int argc, const char *argv[])
 
     google::protobuf::compiler::Importer importer(&sourceTree, NULL);
     //runtime compile foo.proto
-    const google::protobuf::FileDescriptor *open_result = importer.Import("test_02.proto");
+    const google::protobuf::FileDescriptor *open_result = importer.Import("pb_test_02.proto");
     if (!open_result)
     {
         std::cout << "Open file fail. Please check your. code." << std::endl;

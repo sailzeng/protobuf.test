@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "protobuf.test.01", "protobu
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "protobuf.test.02", "protobuf.test.02.vcxproj", "{7C32B51E-3B97-4886-AAF2-1E1796595018}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "protobuf.test.03", "protobuf.test.03.vcxproj", "{48AE6C88-AC84-4E2E-8C60-CAFE2ACEF791}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -21,6 +23,10 @@ Global
 		{7C32B51E-3B97-4886-AAF2-1E1796595018}.Debug|Win32.Build.0 = Debug|Win32
 		{7C32B51E-3B97-4886-AAF2-1E1796595018}.Release|Win32.ActiveCfg = Release|Win32
 		{7C32B51E-3B97-4886-AAF2-1E1796595018}.Release|Win32.Build.0 = Release|Win32
+		{48AE6C88-AC84-4E2E-8C60-CAFE2ACEF791}.Debug|Win32.ActiveCfg = Debug|Win32
+		{48AE6C88-AC84-4E2E-8C60-CAFE2ACEF791}.Debug|Win32.Build.0 = Debug|Win32
+		{48AE6C88-AC84-4E2E-8C60-CAFE2ACEF791}.Release|Win32.ActiveCfg = Release|Win32
+		{48AE6C88-AC84-4E2E-8C60-CAFE2ACEF791}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

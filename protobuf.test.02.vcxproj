@@ -83,7 +83,7 @@
     <ClCompile Include="proto_test_02.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="proto\test_02.proto" />
+    <None Include="proto\pb_test_02.proto" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
