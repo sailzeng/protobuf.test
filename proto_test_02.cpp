@@ -12,6 +12,10 @@
 
 #pragma comment (lib, "libprotobuf.lib" )
 
+//#pragma comment (lib, "libprotobuf-lite.lib" )
+
+
+
 
 int main(int argc, const char *argv[])
 {
@@ -30,6 +34,15 @@ int main(int argc, const char *argv[])
         return -1;
     }
 
+    const google::protobuf::FileDescriptor *open_result_1 = importer.Import("pb_test_01.proto");
+    if (!open_result_1)
+    {
+        std::cout << "Open file fail. Please check your. code." << std::endl;
+        return -1;
+    }
+
+
+
     //可以发现内嵌类，用.操作的方法
     const google::protobuf::Descriptor *desc_s4 = importer.pool()->FindMessageTypeByName("N01.N02.S3.S4");
     if (desc_s4)
@@ -43,6 +56,13 @@ int main(int argc, const char *argv[])
     {
         std::cout << desc_s3->DebugString();
     }
+
+    const google::protobuf::FieldDescriptor  *desc_s3_a = importer.pool()->FindFieldByName("N01.N02.S3.s3_a");
+    if (desc_s3)
+    {
+        std::cout << desc_s3_a->DebugString();
+    }
+
 
     // build a dynamic message by "Pair" proto
     google::protobuf::DynamicMessageFactory factory;

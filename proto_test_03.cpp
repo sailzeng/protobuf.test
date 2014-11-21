@@ -12,7 +12,7 @@
 
 #include "pb_test_03.pb.h"
 
-#pragma comment (lib, "libprotobuf.lib" )
+#pragma comment (lib, "libprotobuf-lite.lib" )
 
 int main(int argc, char *argv[])
 {
