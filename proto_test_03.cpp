@@ -17,41 +17,11 @@
 int main(int argc, char *argv[])
 {
     S1 p;
-    p.set_s1_b(20);
-    p.add_s1_c(1);
-    p.add_s1_c(2);
-    p.add_s1_c(3);
-    p.add_s1_c(4);
-    p.add_s1_c(5);
-
-    S2 *p_s2 = NULL;
-    p_s2 = p.add_s1_d();
-    p_s2->set_s2_a(1);
-    p_s2->set_s2_b("134361");
-
-    p_s2 = p.add_s1_d();
-    p_s2->set_s2_a(2);
-    p_s2->set_s2_b("134361");
-
-    p_s2 = p.add_s1_d();
-    p_s2->set_s2_a(3);
-    p_s2->set_s2_b("134361");
-
-    p_s2 = p.add_s1_d();
-    p_s2->set_s2_a(4);
-    p_s2->set_s2_b("134361");
-
-    p_s2 = p.add_s1_d();
-    p_s2->set_s2_a(5);
-    p_s2->set_s2_b("134361");
 
     p.Clear();
-    p.set_s1_b(20);
-    p.add_s1_c(1);
-
-    p_s2 = p.add_s1_d();
-    p.set_s1_b(20);
-    p.add_s1_c(1);
+    p.add_s1_d(3);
+    p.add_s1_d(270);
+    p.add_s1_d(86942);
 
 
     char buffer[64 * 1024];

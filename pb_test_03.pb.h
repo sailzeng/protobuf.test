@@ -190,35 +190,35 @@ class S1 : public ::google::protobuf::Message {
   inline ::google::protobuf::int32 s1_a() const;
   inline void set_s1_a(::google::protobuf::int32 value);
 
-  // required int32 s1_b = 2 [default = 20];
+  // optional int32 s1_b = 2 [default = 20];
   inline bool has_s1_b() const;
   inline void clear_s1_b();
   static const int kS1BFieldNumber = 2;
   inline ::google::protobuf::int32 s1_b() const;
   inline void set_s1_b(::google::protobuf::int32 value);
 
-  // repeated int32 s1_c = 3;
+  // repeated .S2 s1_c = 3;
   inline int s1_c_size() const;
   inline void clear_s1_c();
   static const int kS1CFieldNumber = 3;
-  inline ::google::protobuf::int32 s1_c(int index) const;
-  inline void set_s1_c(int index, ::google::protobuf::int32 value);
-  inline void add_s1_c(::google::protobuf::int32 value);
-  inline const ::google::protobuf::RepeatedField< ::google::protobuf::int32 >&
+  inline const ::S2& s1_c(int index) const;
+  inline ::S2* mutable_s1_c(int index);
+  inline ::S2* add_s1_c();
+  inline const ::google::protobuf::RepeatedPtrField< ::S2 >&
       s1_c() const;
-  inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
+  inline ::google::protobuf::RepeatedPtrField< ::S2 >*
       mutable_s1_c();
 
-  // repeated .S2 s1_d = 4;
+  // repeated int32 s1_d = 4;
   inline int s1_d_size() const;
   inline void clear_s1_d();
   static const int kS1DFieldNumber = 4;
-  inline const ::S2& s1_d(int index) const;
-  inline ::S2* mutable_s1_d(int index);
-  inline ::S2* add_s1_d();
-  inline const ::google::protobuf::RepeatedPtrField< ::S2 >&
+  inline ::google::protobuf::int32 s1_d(int index) const;
+  inline void set_s1_d(int index, ::google::protobuf::int32 value);
+  inline void add_s1_d(::google::protobuf::int32 value);
+  inline const ::google::protobuf::RepeatedField< ::google::protobuf::int32 >&
       s1_d() const;
-  inline ::google::protobuf::RepeatedPtrField< ::S2 >*
+  inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
       mutable_s1_d();
 
   // optional int32 s1_e = 5;
@@ -378,8 +378,8 @@ class S1 : public ::google::protobuf::Message {
   mutable int _cached_size_;
   ::google::protobuf::int32 s1_a_;
   ::google::protobuf::int32 s1_b_;
-  ::google::protobuf::RepeatedField< ::google::protobuf::int32 > s1_c_;
-  ::google::protobuf::RepeatedPtrField< ::S2 > s1_d_;
+  ::google::protobuf::RepeatedPtrField< ::S2 > s1_c_;
+  ::google::protobuf::RepeatedField< ::google::protobuf::int32 > s1_d_;
   ::google::protobuf::int32 s1_e_;
   ::google::protobuf::int32 s1_f_;
   ::google::protobuf::int32 s1_g_;
@@ -538,7 +538,7 @@ inline void S1::set_s1_a(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:S1.s1_a)
 }
 
-// required int32 s1_b = 2 [default = 20];
+// optional int32 s1_b = 2 [default = 20];
 inline bool S1::has_s1_b() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
@@ -562,61 +562,61 @@ inline void S1::set_s1_b(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:S1.s1_b)
 }
 
-// repeated int32 s1_c = 3;
+// repeated .S2 s1_c = 3;
 inline int S1::s1_c_size() const {
   return s1_c_.size();
 }
 inline void S1::clear_s1_c() {
   s1_c_.Clear();
 }
-inline ::google::protobuf::int32 S1::s1_c(int index) const {
+inline const ::S2& S1::s1_c(int index) const {
   // @@protoc_insertion_point(field_get:S1.s1_c)
   return s1_c_.Get(index);
 }
-inline void S1::set_s1_c(int index, ::google::protobuf::int32 value) {
-  s1_c_.Set(index, value);
-  // @@protoc_insertion_point(field_set:S1.s1_c)
+inline ::S2* S1::mutable_s1_c(int index) {
+  // @@protoc_insertion_point(field_mutable:S1.s1_c)
+  return s1_c_.Mutable(index);
 }
-inline void S1::add_s1_c(::google::protobuf::int32 value) {
-  s1_c_.Add(value);
+inline ::S2* S1::add_s1_c() {
   // @@protoc_insertion_point(field_add:S1.s1_c)
+  return s1_c_.Add();
 }
-inline const ::google::protobuf::RepeatedField< ::google::protobuf::int32 >&
+inline const ::google::protobuf::RepeatedPtrField< ::S2 >&
 S1::s1_c() const {
   // @@protoc_insertion_point(field_list:S1.s1_c)
   return s1_c_;
 }
-inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
+inline ::google::protobuf::RepeatedPtrField< ::S2 >*
 S1::mutable_s1_c() {
   // @@protoc_insertion_point(field_mutable_list:S1.s1_c)
   return &s1_c_;
 }
 
-// repeated .S2 s1_d = 4;
+// repeated int32 s1_d = 4;
 inline int S1::s1_d_size() const {
   return s1_d_.size();
 }
 inline void S1::clear_s1_d() {
   s1_d_.Clear();
 }
-inline const ::S2& S1::s1_d(int index) const {
+inline ::google::protobuf::int32 S1::s1_d(int index) const {
   // @@protoc_insertion_point(field_get:S1.s1_d)
   return s1_d_.Get(index);
 }
-inline ::S2* S1::mutable_s1_d(int index) {
-  // @@protoc_insertion_point(field_mutable:S1.s1_d)
-  return s1_d_.Mutable(index);
+inline void S1::set_s1_d(int index, ::google::protobuf::int32 value) {
+  s1_d_.Set(index, value);
+  // @@protoc_insertion_point(field_set:S1.s1_d)
 }
-inline ::S2* S1::add_s1_d() {
+inline void S1::add_s1_d(::google::protobuf::int32 value) {
+  s1_d_.Add(value);
   // @@protoc_insertion_point(field_add:S1.s1_d)
-  return s1_d_.Add();
 }
-inline const ::google::protobuf::RepeatedPtrField< ::S2 >&
+inline const ::google::protobuf::RepeatedField< ::google::protobuf::int32 >&
 S1::s1_d() const {
   // @@protoc_insertion_point(field_list:S1.s1_d)
   return s1_d_;
 }
-inline ::google::protobuf::RepeatedPtrField< ::S2 >*
+inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
 S1::mutable_s1_d() {
   // @@protoc_insertion_point(field_mutable_list:S1.s1_d)
   return &s1_d_;

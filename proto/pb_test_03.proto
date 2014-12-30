@@ -9,9 +9,9 @@ message S2
 message S1
 {
 	optional int32 s1_a = 1 [default = 10];
-	required int32 s1_b = 2 [default = 20];
-	repeated int32 s1_c = 3;
-	repeated S2 s1_d = 4 ;
+	optional int32 s1_b = 2 [default = 20];
+	repeated S2 s1_c = 3;
+	repeated int32 s1_d = 4  ;
 	optional int32 s1_e = 5;
 	optional int32 s1_f = 6 ;
 	optional int32 s1_g = 7;

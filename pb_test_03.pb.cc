@@ -120,8 +120,8 @@ void protobuf_AddDesc_pb_5ftest_5f03_2eproto() {
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\020pb_test_03.proto\" \n\002S2\022\014\n\004s2_a\030\001 \002(\005\022\014"
     "\n\004s2_b\030\002 \002(\t\"\251\002\n\002S1\022\020\n\004s1_a\030\001 \001(\005:\00210\022\020\n"
-    "\004s1_b\030\002 \002(\005:\00220\022\014\n\004s1_c\030\003 \003(\005\022\021\n\004s1_d\030\004 "
-    "\003(\0132\003.S2\022\014\n\004s1_e\030\005 \001(\005\022\014\n\004s1_f\030\006 \001(\005\022\014\n\004"
+    "\004s1_b\030\002 \001(\005:\00220\022\021\n\004s1_c\030\003 \003(\0132\003.S2\022\014\n\004s1"
+    "_d\030\004 \003(\005\022\014\n\004s1_e\030\005 \001(\005\022\014\n\004s1_f\030\006 \001(\005\022\014\n\004"
     "s1_g\030\007 \001(\005\022\014\n\004s1_h\030\010 \001(\005\022\014\n\004s1_i\030\t \001(\005\022\014"
     "\n\004s1_j\030\n \001(\005\022\014\n\004s1_k\030\013 \001(\005\022\014\n\004s1_l\030\014 \001(\005"
     "\022\014\n\004s1_m\030\r \001(\005\022\014\n\004s1_n\030\016 \001(\005\022\014\n\004s1_o\030\017 \001"
@@ -577,7 +577,7 @@ bool S1::MergePartialFromCodedStream(
         break;
       }
 
-      // required int32 s1_b = 2 [default = 20];
+      // optional int32 s1_b = 2 [default = 20];
       case 2: {
         if (tag == 16) {
          parse_s1_b:
@@ -588,39 +588,39 @@ bool S1::MergePartialFromCodedStream(
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(24)) goto parse_s1_c;
+        if (input->ExpectTag(26)) goto parse_s1_c;
         break;
       }
 
-      // repeated int32 s1_c = 3;
+      // repeated .S2 s1_c = 3;
       case 3: {
-        if (tag == 24) {
+        if (tag == 26) {
          parse_s1_c:
+          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
+                input, add_s1_c()));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(26)) goto parse_s1_c;
+        if (input->ExpectTag(32)) goto parse_s1_d;
+        break;
+      }
+
+      // repeated int32 s1_d = 4;
+      case 4: {
+        if (tag == 32) {
+         parse_s1_d:
           DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitive<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 1, 24, input, this->mutable_s1_c())));
-        } else if (tag == 26) {
+                 1, 32, input, this->mutable_s1_d())));
+        } else if (tag == 34) {
           DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitiveNoInline<
                    ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
-                 input, this->mutable_s1_c())));
+                 input, this->mutable_s1_d())));
         } else {
           goto handle_unusual;
         }
-        if (input->ExpectTag(24)) goto parse_s1_c;
-        if (input->ExpectTag(34)) goto parse_s1_d;
-        break;
-      }
-
-      // repeated .S2 s1_d = 4;
-      case 4: {
-        if (tag == 34) {
-         parse_s1_d:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-                input, add_s1_d()));
-        } else {
-          goto handle_unusual;
-        }
-        if (input->ExpectTag(34)) goto parse_s1_d;
+        if (input->ExpectTag(32)) goto parse_s1_d;
         if (input->ExpectTag(40)) goto parse_s1_e;
         break;
       }
@@ -895,20 +895,20 @@ void S1::SerializeWithCachedSizes(
     ::google::protobuf::internal::WireFormatLite::WriteInt32(1, this->s1_a(), output);
   }
 
-  // required int32 s1_b = 2 [default = 20];
+  // optional int32 s1_b = 2 [default = 20];
   if (has_s1_b()) {
     ::google::protobuf::internal::WireFormatLite::WriteInt32(2, this->s1_b(), output);
   }
 
-  // repeated int32 s1_c = 3;
+  // repeated .S2 s1_c = 3;
   for (int i = 0; i < this->s1_c_size(); i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(
+    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
       3, this->s1_c(i), output);
   }
 
-  // repeated .S2 s1_d = 4;
+  // repeated int32 s1_d = 4;
   for (int i = 0; i < this->s1_d_size(); i++) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(
       4, this->s1_d(i), output);
   }
 
@@ -1007,22 +1007,22 @@ void S1::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(1, this->s1_a(), target);
   }
 
-  // required int32 s1_b = 2 [default = 20];
+  // optional int32 s1_b = 2 [default = 20];
   if (has_s1_b()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(2, this->s1_b(), target);
   }
 
-  // repeated int32 s1_c = 3;
+  // repeated .S2 s1_c = 3;
   for (int i = 0; i < this->s1_c_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteInt32ToArray(3, this->s1_c(i), target);
+      WriteMessageNoVirtualToArray(
+        3, this->s1_c(i), target);
   }
 
-  // repeated .S2 s1_d = 4;
+  // repeated int32 s1_d = 4;
   for (int i = 0; i < this->s1_d_size(); i++) {
     target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        4, this->s1_d(i), target);
+      WriteInt32ToArray(4, this->s1_d(i), target);
   }
 
   // optional int32 s1_e = 5;
@@ -1124,7 +1124,7 @@ int S1::ByteSize() const {
           this->s1_a());
     }
 
-    // required int32 s1_b = 2 [default = 20];
+    // optional int32 s1_b = 2 [default = 20];
     if (has_s1_b()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::Int32Size(
@@ -1248,22 +1248,22 @@ int S1::ByteSize() const {
     }
 
   }
-  // repeated int32 s1_c = 3;
-  {
-    int data_size = 0;
-    for (int i = 0; i < this->s1_c_size(); i++) {
-      data_size += ::google::protobuf::internal::WireFormatLite::
-        Int32Size(this->s1_c(i));
-    }
-    total_size += 1 * this->s1_c_size() + data_size;
-  }
-
-  // repeated .S2 s1_d = 4;
-  total_size += 1 * this->s1_d_size();
-  for (int i = 0; i < this->s1_d_size(); i++) {
+  // repeated .S2 s1_c = 3;
+  total_size += 1 * this->s1_c_size();
+  for (int i = 0; i < this->s1_c_size(); i++) {
     total_size +=
       ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-        this->s1_d(i));
+        this->s1_c(i));
+  }
+
+  // repeated int32 s1_d = 4;
+  {
+    int data_size = 0;
+    for (int i = 0; i < this->s1_d_size(); i++) {
+      data_size += ::google::protobuf::internal::WireFormatLite::
+        Int32Size(this->s1_d(i));
+    }
+    total_size += 1 * this->s1_d_size() + data_size;
   }
 
   if (!unknown_fields().empty()) {
@@ -1369,9 +1369,8 @@ void S1::CopyFrom(const S1& from) {
 }
 
 bool S1::IsInitialized() const {
-  if ((_has_bits_[0] & 0x00000002) != 0x00000002) return false;
 
-  if (!::google::protobuf::internal::AllAreInitialized(this->s1_d())) return false;
+  if (!::google::protobuf::internal::AllAreInitialized(this->s1_c())) return false;
   return true;
 }
 
