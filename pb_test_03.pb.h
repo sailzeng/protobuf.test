@@ -23,6 +23,7 @@
 #include <google/protobuf/message.h>
 #include <google/protobuf/repeated_field.h>
 #include <google/protobuf/extension_set.h>
+#include <google/protobuf/generated_enum_reflection.h>
 #include <google/protobuf/unknown_field_set.h>
 // @@protoc_insertion_point(includes)
 
@@ -31,104 +32,31 @@ void  protobuf_AddDesc_pb_5ftest_5f03_2eproto();
 void protobuf_AssignDesc_pb_5ftest_5f03_2eproto();
 void protobuf_ShutdownFile_pb_5ftest_5f03_2eproto();
 
-class S2;
 class S1;
+class S2;
+class S3;
 
-// ===================================================================
-
-class S2 : public ::google::protobuf::Message {
- public:
-  S2();
-  virtual ~S2();
-
-  S2(const S2& from);
-
-  inline S2& operator=(const S2& from) {
-    CopyFrom(from);
-    return *this;
-  }
-
-  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
-    return _unknown_fields_;
-  }
-
-  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
-    return &_unknown_fields_;
-  }
-
-  static const ::google::protobuf::Descriptor* descriptor();
-  static const S2& default_instance();
-
-  void Swap(S2* other);
-
-  // implements Message ----------------------------------------------
-
-  S2* New() const;
-  void CopyFrom(const ::google::protobuf::Message& from);
-  void MergeFrom(const ::google::protobuf::Message& from);
-  void CopyFrom(const S2& from);
-  void MergeFrom(const S2& from);
-  void Clear();
-  bool IsInitialized() const;
-
-  int ByteSize() const;
-  bool MergePartialFromCodedStream(
-      ::google::protobuf::io::CodedInputStream* input);
-  void SerializeWithCachedSizes(
-      ::google::protobuf::io::CodedOutputStream* output) const;
-  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
-  int GetCachedSize() const { return _cached_size_; }
-  private:
-  void SharedCtor();
-  void SharedDtor();
-  void SetCachedSize(int size) const;
-  public:
-  ::google::protobuf::Metadata GetMetadata() const;
-
-  // nested types ----------------------------------------------------
-
-  // accessors -------------------------------------------------------
-
-  // required int32 s2_a = 1;
-  inline bool has_s2_a() const;
-  inline void clear_s2_a();
-  static const int kS2AFieldNumber = 1;
-  inline ::google::protobuf::int32 s2_a() const;
-  inline void set_s2_a(::google::protobuf::int32 value);
-
-  // required string s2_b = 2;
-  inline bool has_s2_b() const;
-  inline void clear_s2_b();
-  static const int kS2BFieldNumber = 2;
-  inline const ::std::string& s2_b() const;
-  inline void set_s2_b(const ::std::string& value);
-  inline void set_s2_b(const char* value);
-  inline void set_s2_b(const char* value, size_t size);
-  inline ::std::string* mutable_s2_b();
-  inline ::std::string* release_s2_b();
-  inline void set_allocated_s2_b(::std::string* s2_b);
-
-  // @@protoc_insertion_point(class_scope:S2)
- private:
-  inline void set_has_s2_a();
-  inline void clear_has_s2_a();
-  inline void set_has_s2_b();
-  inline void clear_has_s2_b();
-
-  ::google::protobuf::UnknownFieldSet _unknown_fields_;
-
-  ::google::protobuf::uint32 _has_bits_[1];
-  mutable int _cached_size_;
-  ::std::string* s2_b_;
-  ::google::protobuf::int32 s2_a_;
-  friend void  protobuf_AddDesc_pb_5ftest_5f03_2eproto();
-  friend void protobuf_AssignDesc_pb_5ftest_5f03_2eproto();
-  friend void protobuf_ShutdownFile_pb_5ftest_5f03_2eproto();
-
-  void InitAsDefaultInstance();
-  static S2* default_instance_;
+enum E1 {
+  E1_1 = 0,
+  E1_2 = 1,
+  E1_3 = 2
 };
-// -------------------------------------------------------------------
+bool E1_IsValid(int value);
+const E1 E1_MIN = E1_1;
+const E1 E1_MAX = E1_3;
+const int E1_ARRAYSIZE = E1_MAX + 1;
+
+const ::google::protobuf::EnumDescriptor* E1_descriptor();
+inline const ::std::string& E1_Name(E1 value) {
+  return ::google::protobuf::internal::NameOfEnum(
+    E1_descriptor(), value);
+}
+inline bool E1_Parse(
+    const ::std::string& name, E1* value) {
+  return ::google::protobuf::internal::ParseNamedEnum<E1>(
+    E1_descriptor(), name, value);
+}
+// ===================================================================
 
 class S1 : public ::google::protobuf::Message {
  public:
@@ -183,219 +111,38 @@ class S1 : public ::google::protobuf::Message {
 
   // accessors -------------------------------------------------------
 
-  // optional int32 s1_a = 1 [default = 10];
-  inline bool has_s1_a() const;
-  inline void clear_s1_a();
-  static const int kS1AFieldNumber = 1;
-  inline ::google::protobuf::int32 s1_a() const;
-  inline void set_s1_a(::google::protobuf::int32 value);
+  // optional int32 s2_1 = 1;
+  inline bool has_s2_1() const;
+  inline void clear_s2_1();
+  static const int kS21FieldNumber = 1;
+  inline ::google::protobuf::int32 s2_1() const;
+  inline void set_s2_1(::google::protobuf::int32 value);
 
-  // optional int32 s1_b = 2 [default = 20];
-  inline bool has_s1_b() const;
-  inline void clear_s1_b();
-  static const int kS1BFieldNumber = 2;
-  inline ::google::protobuf::int32 s1_b() const;
-  inline void set_s1_b(::google::protobuf::int32 value);
-
-  // repeated .S2 s1_c = 3;
-  inline int s1_c_size() const;
-  inline void clear_s1_c();
-  static const int kS1CFieldNumber = 3;
-  inline const ::S2& s1_c(int index) const;
-  inline ::S2* mutable_s1_c(int index);
-  inline ::S2* add_s1_c();
-  inline const ::google::protobuf::RepeatedPtrField< ::S2 >&
-      s1_c() const;
-  inline ::google::protobuf::RepeatedPtrField< ::S2 >*
-      mutable_s1_c();
-
-  // repeated int32 s1_d = 4;
-  inline int s1_d_size() const;
-  inline void clear_s1_d();
-  static const int kS1DFieldNumber = 4;
-  inline ::google::protobuf::int32 s1_d(int index) const;
-  inline void set_s1_d(int index, ::google::protobuf::int32 value);
-  inline void add_s1_d(::google::protobuf::int32 value);
-  inline const ::google::protobuf::RepeatedField< ::google::protobuf::int32 >&
-      s1_d() const;
-  inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
-      mutable_s1_d();
-
-  // optional int32 s1_e = 5;
-  inline bool has_s1_e() const;
-  inline void clear_s1_e();
-  static const int kS1EFieldNumber = 5;
-  inline ::google::protobuf::int32 s1_e() const;
-  inline void set_s1_e(::google::protobuf::int32 value);
-
-  // optional int32 s1_f = 6;
-  inline bool has_s1_f() const;
-  inline void clear_s1_f();
-  static const int kS1FFieldNumber = 6;
-  inline ::google::protobuf::int32 s1_f() const;
-  inline void set_s1_f(::google::protobuf::int32 value);
-
-  // optional int32 s1_g = 7;
-  inline bool has_s1_g() const;
-  inline void clear_s1_g();
-  static const int kS1GFieldNumber = 7;
-  inline ::google::protobuf::int32 s1_g() const;
-  inline void set_s1_g(::google::protobuf::int32 value);
-
-  // optional int32 s1_h = 8;
-  inline bool has_s1_h() const;
-  inline void clear_s1_h();
-  static const int kS1HFieldNumber = 8;
-  inline ::google::protobuf::int32 s1_h() const;
-  inline void set_s1_h(::google::protobuf::int32 value);
-
-  // optional int32 s1_i = 9;
-  inline bool has_s1_i() const;
-  inline void clear_s1_i();
-  static const int kS1IFieldNumber = 9;
-  inline ::google::protobuf::int32 s1_i() const;
-  inline void set_s1_i(::google::protobuf::int32 value);
-
-  // optional int32 s1_j = 10;
-  inline bool has_s1_j() const;
-  inline void clear_s1_j();
-  static const int kS1JFieldNumber = 10;
-  inline ::google::protobuf::int32 s1_j() const;
-  inline void set_s1_j(::google::protobuf::int32 value);
-
-  // optional int32 s1_k = 11;
-  inline bool has_s1_k() const;
-  inline void clear_s1_k();
-  static const int kS1KFieldNumber = 11;
-  inline ::google::protobuf::int32 s1_k() const;
-  inline void set_s1_k(::google::protobuf::int32 value);
-
-  // optional int32 s1_l = 12;
-  inline bool has_s1_l() const;
-  inline void clear_s1_l();
-  static const int kS1LFieldNumber = 12;
-  inline ::google::protobuf::int32 s1_l() const;
-  inline void set_s1_l(::google::protobuf::int32 value);
-
-  // optional int32 s1_m = 13;
-  inline bool has_s1_m() const;
-  inline void clear_s1_m();
-  static const int kS1MFieldNumber = 13;
-  inline ::google::protobuf::int32 s1_m() const;
-  inline void set_s1_m(::google::protobuf::int32 value);
-
-  // optional int32 s1_n = 14;
-  inline bool has_s1_n() const;
-  inline void clear_s1_n();
-  static const int kS1NFieldNumber = 14;
-  inline ::google::protobuf::int32 s1_n() const;
-  inline void set_s1_n(::google::protobuf::int32 value);
-
-  // optional int32 s1_o = 15;
-  inline bool has_s1_o() const;
-  inline void clear_s1_o();
-  static const int kS1OFieldNumber = 15;
-  inline ::google::protobuf::int32 s1_o() const;
-  inline void set_s1_o(::google::protobuf::int32 value);
-
-  // optional int32 s1_p = 16;
-  inline bool has_s1_p() const;
-  inline void clear_s1_p();
-  static const int kS1PFieldNumber = 16;
-  inline ::google::protobuf::int32 s1_p() const;
-  inline void set_s1_p(::google::protobuf::int32 value);
-
-  // optional int32 s1_q = 17;
-  inline bool has_s1_q() const;
-  inline void clear_s1_q();
-  static const int kS1QFieldNumber = 17;
-  inline ::google::protobuf::int32 s1_q() const;
-  inline void set_s1_q(::google::protobuf::int32 value);
-
-  // optional int32 s1_r = 18;
-  inline bool has_s1_r() const;
-  inline void clear_s1_r();
-  static const int kS1RFieldNumber = 18;
-  inline ::google::protobuf::int32 s1_r() const;
-  inline void set_s1_r(::google::protobuf::int32 value);
-
-  // optional int32 s1_s = 19;
-  inline bool has_s1_s() const;
-  inline void clear_s1_s();
-  static const int kS1SFieldNumber = 19;
-  inline ::google::protobuf::int32 s1_s() const;
-  inline void set_s1_s(::google::protobuf::int32 value);
-
-  // optional int32 s1_t = 20;
-  inline bool has_s1_t() const;
-  inline void clear_s1_t();
-  static const int kS1TFieldNumber = 20;
-  inline ::google::protobuf::int32 s1_t() const;
-  inline void set_s1_t(::google::protobuf::int32 value);
+  // optional string s2_2 = 2;
+  inline bool has_s2_2() const;
+  inline void clear_s2_2();
+  static const int kS22FieldNumber = 2;
+  inline const ::std::string& s2_2() const;
+  inline void set_s2_2(const ::std::string& value);
+  inline void set_s2_2(const char* value);
+  inline void set_s2_2(const char* value, size_t size);
+  inline ::std::string* mutable_s2_2();
+  inline ::std::string* release_s2_2();
+  inline void set_allocated_s2_2(::std::string* s2_2);
 
   // @@protoc_insertion_point(class_scope:S1)
  private:
-  inline void set_has_s1_a();
-  inline void clear_has_s1_a();
-  inline void set_has_s1_b();
-  inline void clear_has_s1_b();
-  inline void set_has_s1_e();
-  inline void clear_has_s1_e();
-  inline void set_has_s1_f();
-  inline void clear_has_s1_f();
-  inline void set_has_s1_g();
-  inline void clear_has_s1_g();
-  inline void set_has_s1_h();
-  inline void clear_has_s1_h();
-  inline void set_has_s1_i();
-  inline void clear_has_s1_i();
-  inline void set_has_s1_j();
-  inline void clear_has_s1_j();
-  inline void set_has_s1_k();
-  inline void clear_has_s1_k();
-  inline void set_has_s1_l();
-  inline void clear_has_s1_l();
-  inline void set_has_s1_m();
-  inline void clear_has_s1_m();
-  inline void set_has_s1_n();
-  inline void clear_has_s1_n();
-  inline void set_has_s1_o();
-  inline void clear_has_s1_o();
-  inline void set_has_s1_p();
-  inline void clear_has_s1_p();
-  inline void set_has_s1_q();
-  inline void clear_has_s1_q();
-  inline void set_has_s1_r();
-  inline void clear_has_s1_r();
-  inline void set_has_s1_s();
-  inline void clear_has_s1_s();
-  inline void set_has_s1_t();
-  inline void clear_has_s1_t();
+  inline void set_has_s2_1();
+  inline void clear_has_s2_1();
+  inline void set_has_s2_2();
+  inline void clear_has_s2_2();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
   ::google::protobuf::uint32 _has_bits_[1];
   mutable int _cached_size_;
-  ::google::protobuf::int32 s1_a_;
-  ::google::protobuf::int32 s1_b_;
-  ::google::protobuf::RepeatedPtrField< ::S2 > s1_c_;
-  ::google::protobuf::RepeatedField< ::google::protobuf::int32 > s1_d_;
-  ::google::protobuf::int32 s1_e_;
-  ::google::protobuf::int32 s1_f_;
-  ::google::protobuf::int32 s1_g_;
-  ::google::protobuf::int32 s1_h_;
-  ::google::protobuf::int32 s1_i_;
-  ::google::protobuf::int32 s1_j_;
-  ::google::protobuf::int32 s1_k_;
-  ::google::protobuf::int32 s1_l_;
-  ::google::protobuf::int32 s1_m_;
-  ::google::protobuf::int32 s1_n_;
-  ::google::protobuf::int32 s1_o_;
-  ::google::protobuf::int32 s1_p_;
-  ::google::protobuf::int32 s1_q_;
-  ::google::protobuf::int32 s1_r_;
-  ::google::protobuf::int32 s1_s_;
-  ::google::protobuf::int32 s1_t_;
+  ::std::string* s2_2_;
+  ::google::protobuf::int32 s2_1_;
   friend void  protobuf_AddDesc_pb_5ftest_5f03_2eproto();
   friend void protobuf_AssignDesc_pb_5ftest_5f03_2eproto();
   friend void protobuf_ShutdownFile_pb_5ftest_5f03_2eproto();
@@ -403,14 +150,552 @@ class S1 : public ::google::protobuf::Message {
   void InitAsDefaultInstance();
   static S1* default_instance_;
 };
+// -------------------------------------------------------------------
+
+class S2 : public ::google::protobuf::Message {
+ public:
+  S2();
+  virtual ~S2();
+
+  S2(const S2& from);
+
+  inline S2& operator=(const S2& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const S2& default_instance();
+
+  void Swap(S2* other);
+
+  // implements Message ----------------------------------------------
+
+  S2* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const S2& from);
+  void MergeFrom(const S2& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional int32 s2_a = 1;
+  inline bool has_s2_a() const;
+  inline void clear_s2_a();
+  static const int kS2AFieldNumber = 1;
+  inline ::google::protobuf::int32 s2_a() const;
+  inline void set_s2_a(::google::protobuf::int32 value);
+
+  // optional string s2_b = 2;
+  inline bool has_s2_b() const;
+  inline void clear_s2_b();
+  static const int kS2BFieldNumber = 2;
+  inline const ::std::string& s2_b() const;
+  inline void set_s2_b(const ::std::string& value);
+  inline void set_s2_b(const char* value);
+  inline void set_s2_b(const char* value, size_t size);
+  inline ::std::string* mutable_s2_b();
+  inline ::std::string* release_s2_b();
+  inline void set_allocated_s2_b(::std::string* s2_b);
+
+  // @@protoc_insertion_point(class_scope:S2)
+ private:
+  inline void set_has_s2_a();
+  inline void clear_has_s2_a();
+  inline void set_has_s2_b();
+  inline void clear_has_s2_b();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::std::string* s2_b_;
+  ::google::protobuf::int32 s2_a_;
+  friend void  protobuf_AddDesc_pb_5ftest_5f03_2eproto();
+  friend void protobuf_AssignDesc_pb_5ftest_5f03_2eproto();
+  friend void protobuf_ShutdownFile_pb_5ftest_5f03_2eproto();
+
+  void InitAsDefaultInstance();
+  static S2* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class S3 : public ::google::protobuf::Message {
+ public:
+  S3();
+  virtual ~S3();
+
+  S3(const S3& from);
+
+  inline S3& operator=(const S3& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const S3& default_instance();
+
+  void Swap(S3* other);
+
+  // implements Message ----------------------------------------------
+
+  S3* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const S3& from);
+  void MergeFrom(const S3& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional int32 s3_1 = 1;
+  inline bool has_s3_1() const;
+  inline void clear_s3_1();
+  static const int kS31FieldNumber = 1;
+  inline ::google::protobuf::int32 s3_1() const;
+  inline void set_s3_1(::google::protobuf::int32 value);
+
+  // optional int32 s3_2 = 2;
+  inline bool has_s3_2() const;
+  inline void clear_s3_2();
+  static const int kS32FieldNumber = 2;
+  inline ::google::protobuf::int32 s3_2() const;
+  inline void set_s3_2(::google::protobuf::int32 value);
+
+  // optional int32 s3_3 = 3;
+  inline bool has_s3_3() const;
+  inline void clear_s3_3();
+  static const int kS33FieldNumber = 3;
+  inline ::google::protobuf::int32 s3_3() const;
+  inline void set_s3_3(::google::protobuf::int32 value);
+
+  // optional int32 s3_4 = 4;
+  inline bool has_s3_4() const;
+  inline void clear_s3_4();
+  static const int kS34FieldNumber = 4;
+  inline ::google::protobuf::int32 s3_4() const;
+  inline void set_s3_4(::google::protobuf::int32 value);
+
+  // optional int64 s3_5 = 5;
+  inline bool has_s3_5() const;
+  inline void clear_s3_5();
+  static const int kS35FieldNumber = 5;
+  inline ::google::protobuf::int64 s3_5() const;
+  inline void set_s3_5(::google::protobuf::int64 value);
+
+  // optional int64 s3_6 = 6;
+  inline bool has_s3_6() const;
+  inline void clear_s3_6();
+  static const int kS36FieldNumber = 6;
+  inline ::google::protobuf::int64 s3_6() const;
+  inline void set_s3_6(::google::protobuf::int64 value);
+
+  // optional uint32 s3_7 = 7;
+  inline bool has_s3_7() const;
+  inline void clear_s3_7();
+  static const int kS37FieldNumber = 7;
+  inline ::google::protobuf::uint32 s3_7() const;
+  inline void set_s3_7(::google::protobuf::uint32 value);
+
+  // optional uint64 s3_8 = 8;
+  inline bool has_s3_8() const;
+  inline void clear_s3_8();
+  static const int kS38FieldNumber = 8;
+  inline ::google::protobuf::uint64 s3_8() const;
+  inline void set_s3_8(::google::protobuf::uint64 value);
+
+  // optional sint32 s3_9 = 9;
+  inline bool has_s3_9() const;
+  inline void clear_s3_9();
+  static const int kS39FieldNumber = 9;
+  inline ::google::protobuf::int32 s3_9() const;
+  inline void set_s3_9(::google::protobuf::int32 value);
+
+  // optional sint64 s3_10 = 10;
+  inline bool has_s3_10() const;
+  inline void clear_s3_10();
+  static const int kS310FieldNumber = 10;
+  inline ::google::protobuf::int64 s3_10() const;
+  inline void set_s3_10(::google::protobuf::int64 value);
+
+  // optional int32 s3_64 = 64;
+  inline bool has_s3_64() const;
+  inline void clear_s3_64();
+  static const int kS364FieldNumber = 64;
+  inline ::google::protobuf::int32 s3_64() const;
+  inline void set_s3_64(::google::protobuf::int32 value);
+
+  // optional .E1 s3_65 = 65;
+  inline bool has_s3_65() const;
+  inline void clear_s3_65();
+  static const int kS365FieldNumber = 65;
+  inline ::E1 s3_65() const;
+  inline void set_s3_65(::E1 value);
+
+  // optional bool s3_66 = 66;
+  inline bool has_s3_66() const;
+  inline void clear_s3_66();
+  static const int kS366FieldNumber = 66;
+  inline bool s3_66() const;
+  inline void set_s3_66(bool value);
+
+  // optional float s3_12 = 12;
+  inline bool has_s3_12() const;
+  inline void clear_s3_12();
+  static const int kS312FieldNumber = 12;
+  inline float s3_12() const;
+  inline void set_s3_12(float value);
+
+  // optional fixed32 s3_13 = 13;
+  inline bool has_s3_13() const;
+  inline void clear_s3_13();
+  static const int kS313FieldNumber = 13;
+  inline ::google::protobuf::uint32 s3_13() const;
+  inline void set_s3_13(::google::protobuf::uint32 value);
+
+  // optional sfixed32 s3_14 = 14;
+  inline bool has_s3_14() const;
+  inline void clear_s3_14();
+  static const int kS314FieldNumber = 14;
+  inline ::google::protobuf::int32 s3_14() const;
+  inline void set_s3_14(::google::protobuf::int32 value);
+
+  // optional double s3_15 = 15;
+  inline bool has_s3_15() const;
+  inline void clear_s3_15();
+  static const int kS315FieldNumber = 15;
+  inline double s3_15() const;
+  inline void set_s3_15(double value);
+
+  // optional fixed64 s3_16 = 16;
+  inline bool has_s3_16() const;
+  inline void clear_s3_16();
+  static const int kS316FieldNumber = 16;
+  inline ::google::protobuf::uint64 s3_16() const;
+  inline void set_s3_16(::google::protobuf::uint64 value);
+
+  // optional sfixed64 s3_17 = 17;
+  inline bool has_s3_17() const;
+  inline void clear_s3_17();
+  static const int kS317FieldNumber = 17;
+  inline ::google::protobuf::int64 s3_17() const;
+  inline void set_s3_17(::google::protobuf::int64 value);
+
+  // optional string s3_18 = 18;
+  inline bool has_s3_18() const;
+  inline void clear_s3_18();
+  static const int kS318FieldNumber = 18;
+  inline const ::std::string& s3_18() const;
+  inline void set_s3_18(const ::std::string& value);
+  inline void set_s3_18(const char* value);
+  inline void set_s3_18(const char* value, size_t size);
+  inline ::std::string* mutable_s3_18();
+  inline ::std::string* release_s3_18();
+  inline void set_allocated_s3_18(::std::string* s3_18);
+
+  // optional bytes s3_19 = 19;
+  inline bool has_s3_19() const;
+  inline void clear_s3_19();
+  static const int kS319FieldNumber = 19;
+  inline const ::std::string& s3_19() const;
+  inline void set_s3_19(const ::std::string& value);
+  inline void set_s3_19(const char* value);
+  inline void set_s3_19(const void* value, size_t size);
+  inline ::std::string* mutable_s3_19();
+  inline ::std::string* release_s3_19();
+  inline void set_allocated_s3_19(::std::string* s3_19);
+
+  // repeated int32 s3_20 = 20;
+  inline int s3_20_size() const;
+  inline void clear_s3_20();
+  static const int kS320FieldNumber = 20;
+  inline ::google::protobuf::int32 s3_20(int index) const;
+  inline void set_s3_20(int index, ::google::protobuf::int32 value);
+  inline void add_s3_20(::google::protobuf::int32 value);
+  inline const ::google::protobuf::RepeatedField< ::google::protobuf::int32 >&
+      s3_20() const;
+  inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
+      mutable_s3_20();
+
+  // repeated int32 s3_21 = 21 [packed = true];
+  inline int s3_21_size() const;
+  inline void clear_s3_21();
+  static const int kS321FieldNumber = 21;
+  inline ::google::protobuf::int32 s3_21(int index) const;
+  inline void set_s3_21(int index, ::google::protobuf::int32 value);
+  inline void add_s3_21(::google::protobuf::int32 value);
+  inline const ::google::protobuf::RepeatedField< ::google::protobuf::int32 >&
+      s3_21() const;
+  inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
+      mutable_s3_21();
+
+  // optional .S1 s3_22 = 22;
+  inline bool has_s3_22() const;
+  inline void clear_s3_22();
+  static const int kS322FieldNumber = 22;
+  inline const ::S1& s3_22() const;
+  inline ::S1* mutable_s3_22();
+  inline ::S1* release_s3_22();
+  inline void set_allocated_s3_22(::S1* s3_22);
+
+  // required .S2 s3_23 = 23;
+  inline bool has_s3_23() const;
+  inline void clear_s3_23();
+  static const int kS323FieldNumber = 23;
+  inline const ::S2& s3_23() const;
+  inline ::S2* mutable_s3_23();
+  inline ::S2* release_s3_23();
+  inline void set_allocated_s3_23(::S2* s3_23);
+
+  // @@protoc_insertion_point(class_scope:S3)
+ private:
+  inline void set_has_s3_1();
+  inline void clear_has_s3_1();
+  inline void set_has_s3_2();
+  inline void clear_has_s3_2();
+  inline void set_has_s3_3();
+  inline void clear_has_s3_3();
+  inline void set_has_s3_4();
+  inline void clear_has_s3_4();
+  inline void set_has_s3_5();
+  inline void clear_has_s3_5();
+  inline void set_has_s3_6();
+  inline void clear_has_s3_6();
+  inline void set_has_s3_7();
+  inline void clear_has_s3_7();
+  inline void set_has_s3_8();
+  inline void clear_has_s3_8();
+  inline void set_has_s3_9();
+  inline void clear_has_s3_9();
+  inline void set_has_s3_10();
+  inline void clear_has_s3_10();
+  inline void set_has_s3_64();
+  inline void clear_has_s3_64();
+  inline void set_has_s3_65();
+  inline void clear_has_s3_65();
+  inline void set_has_s3_66();
+  inline void clear_has_s3_66();
+  inline void set_has_s3_12();
+  inline void clear_has_s3_12();
+  inline void set_has_s3_13();
+  inline void clear_has_s3_13();
+  inline void set_has_s3_14();
+  inline void clear_has_s3_14();
+  inline void set_has_s3_15();
+  inline void clear_has_s3_15();
+  inline void set_has_s3_16();
+  inline void clear_has_s3_16();
+  inline void set_has_s3_17();
+  inline void clear_has_s3_17();
+  inline void set_has_s3_18();
+  inline void clear_has_s3_18();
+  inline void set_has_s3_19();
+  inline void clear_has_s3_19();
+  inline void set_has_s3_22();
+  inline void clear_has_s3_22();
+  inline void set_has_s3_23();
+  inline void clear_has_s3_23();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::int32 s3_1_;
+  ::google::protobuf::int32 s3_2_;
+  ::google::protobuf::int32 s3_3_;
+  ::google::protobuf::int32 s3_4_;
+  ::google::protobuf::int64 s3_5_;
+  ::google::protobuf::int64 s3_6_;
+  ::google::protobuf::uint64 s3_8_;
+  ::google::protobuf::uint32 s3_7_;
+  ::google::protobuf::int32 s3_9_;
+  ::google::protobuf::int64 s3_10_;
+  ::google::protobuf::int32 s3_64_;
+  int s3_65_;
+  bool s3_66_;
+  float s3_12_;
+  ::google::protobuf::uint32 s3_13_;
+  ::google::protobuf::int32 s3_14_;
+  double s3_15_;
+  ::google::protobuf::uint64 s3_16_;
+  ::google::protobuf::int64 s3_17_;
+  ::std::string* s3_18_;
+  ::std::string* s3_19_;
+  ::google::protobuf::RepeatedField< ::google::protobuf::int32 > s3_20_;
+  ::google::protobuf::RepeatedField< ::google::protobuf::int32 > s3_21_;
+  mutable int _s3_21_cached_byte_size_;
+  ::S1* s3_22_;
+  ::S2* s3_23_;
+  friend void  protobuf_AddDesc_pb_5ftest_5f03_2eproto();
+  friend void protobuf_AssignDesc_pb_5ftest_5f03_2eproto();
+  friend void protobuf_ShutdownFile_pb_5ftest_5f03_2eproto();
+
+  void InitAsDefaultInstance();
+  static S3* default_instance_;
+};
 // ===================================================================
 
 
 // ===================================================================
+
+// S1
+
+// optional int32 s2_1 = 1;
+inline bool S1::has_s2_1() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void S1::set_has_s2_1() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void S1::clear_has_s2_1() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void S1::clear_s2_1() {
+  s2_1_ = 0;
+  clear_has_s2_1();
+}
+inline ::google::protobuf::int32 S1::s2_1() const {
+  // @@protoc_insertion_point(field_get:S1.s2_1)
+  return s2_1_;
+}
+inline void S1::set_s2_1(::google::protobuf::int32 value) {
+  set_has_s2_1();
+  s2_1_ = value;
+  // @@protoc_insertion_point(field_set:S1.s2_1)
+}
+
+// optional string s2_2 = 2;
+inline bool S1::has_s2_2() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void S1::set_has_s2_2() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void S1::clear_has_s2_2() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void S1::clear_s2_2() {
+  if (s2_2_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    s2_2_->clear();
+  }
+  clear_has_s2_2();
+}
+inline const ::std::string& S1::s2_2() const {
+  // @@protoc_insertion_point(field_get:S1.s2_2)
+  return *s2_2_;
+}
+inline void S1::set_s2_2(const ::std::string& value) {
+  set_has_s2_2();
+  if (s2_2_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    s2_2_ = new ::std::string;
+  }
+  s2_2_->assign(value);
+  // @@protoc_insertion_point(field_set:S1.s2_2)
+}
+inline void S1::set_s2_2(const char* value) {
+  set_has_s2_2();
+  if (s2_2_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    s2_2_ = new ::std::string;
+  }
+  s2_2_->assign(value);
+  // @@protoc_insertion_point(field_set_char:S1.s2_2)
+}
+inline void S1::set_s2_2(const char* value, size_t size) {
+  set_has_s2_2();
+  if (s2_2_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    s2_2_ = new ::std::string;
+  }
+  s2_2_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:S1.s2_2)
+}
+inline ::std::string* S1::mutable_s2_2() {
+  set_has_s2_2();
+  if (s2_2_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    s2_2_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:S1.s2_2)
+  return s2_2_;
+}
+inline ::std::string* S1::release_s2_2() {
+  clear_has_s2_2();
+  if (s2_2_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = s2_2_;
+    s2_2_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void S1::set_allocated_s2_2(::std::string* s2_2) {
+  if (s2_2_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete s2_2_;
+  }
+  if (s2_2) {
+    set_has_s2_2();
+    s2_2_ = s2_2;
+  } else {
+    clear_has_s2_2();
+    s2_2_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:S1.s2_2)
+}
+
+// -------------------------------------------------------------------
 
 // S2
 
-// required int32 s2_a = 1;
+// optional int32 s2_a = 1;
 inline bool S2::has_s2_a() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
@@ -434,7 +719,7 @@ inline void S2::set_s2_a(::google::protobuf::int32 value) {
   // @@protoc_insertion_point(field_set:S2.s2_a)
 }
 
-// required string s2_b = 2;
+// optional string s2_b = 2;
 inline bool S2::has_s2_b() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
@@ -512,498 +797,757 @@ inline void S2::set_allocated_s2_b(::std::string* s2_b) {
 
 // -------------------------------------------------------------------
 
-// S1
+// S3
 
-// optional int32 s1_a = 1 [default = 10];
-inline bool S1::has_s1_a() const {
+// optional int32 s3_1 = 1;
+inline bool S3::has_s3_1() const {
   return (_has_bits_[0] & 0x00000001u) != 0;
 }
-inline void S1::set_has_s1_a() {
+inline void S3::set_has_s3_1() {
   _has_bits_[0] |= 0x00000001u;
 }
-inline void S1::clear_has_s1_a() {
+inline void S3::clear_has_s3_1() {
   _has_bits_[0] &= ~0x00000001u;
 }
-inline void S1::clear_s1_a() {
-  s1_a_ = 10;
-  clear_has_s1_a();
+inline void S3::clear_s3_1() {
+  s3_1_ = 0;
+  clear_has_s3_1();
 }
-inline ::google::protobuf::int32 S1::s1_a() const {
-  // @@protoc_insertion_point(field_get:S1.s1_a)
-  return s1_a_;
+inline ::google::protobuf::int32 S3::s3_1() const {
+  // @@protoc_insertion_point(field_get:S3.s3_1)
+  return s3_1_;
 }
-inline void S1::set_s1_a(::google::protobuf::int32 value) {
-  set_has_s1_a();
-  s1_a_ = value;
-  // @@protoc_insertion_point(field_set:S1.s1_a)
+inline void S3::set_s3_1(::google::protobuf::int32 value) {
+  set_has_s3_1();
+  s3_1_ = value;
+  // @@protoc_insertion_point(field_set:S3.s3_1)
 }
 
-// optional int32 s1_b = 2 [default = 20];
-inline bool S1::has_s1_b() const {
+// optional int32 s3_2 = 2;
+inline bool S3::has_s3_2() const {
   return (_has_bits_[0] & 0x00000002u) != 0;
 }
-inline void S1::set_has_s1_b() {
+inline void S3::set_has_s3_2() {
   _has_bits_[0] |= 0x00000002u;
 }
-inline void S1::clear_has_s1_b() {
+inline void S3::clear_has_s3_2() {
   _has_bits_[0] &= ~0x00000002u;
 }
-inline void S1::clear_s1_b() {
-  s1_b_ = 20;
-  clear_has_s1_b();
+inline void S3::clear_s3_2() {
+  s3_2_ = 0;
+  clear_has_s3_2();
 }
-inline ::google::protobuf::int32 S1::s1_b() const {
-  // @@protoc_insertion_point(field_get:S1.s1_b)
-  return s1_b_;
+inline ::google::protobuf::int32 S3::s3_2() const {
+  // @@protoc_insertion_point(field_get:S3.s3_2)
+  return s3_2_;
 }
-inline void S1::set_s1_b(::google::protobuf::int32 value) {
-  set_has_s1_b();
-  s1_b_ = value;
-  // @@protoc_insertion_point(field_set:S1.s1_b)
-}
-
-// repeated .S2 s1_c = 3;
-inline int S1::s1_c_size() const {
-  return s1_c_.size();
-}
-inline void S1::clear_s1_c() {
-  s1_c_.Clear();
-}
-inline const ::S2& S1::s1_c(int index) const {
-  // @@protoc_insertion_point(field_get:S1.s1_c)
-  return s1_c_.Get(index);
-}
-inline ::S2* S1::mutable_s1_c(int index) {
-  // @@protoc_insertion_point(field_mutable:S1.s1_c)
-  return s1_c_.Mutable(index);
-}
-inline ::S2* S1::add_s1_c() {
-  // @@protoc_insertion_point(field_add:S1.s1_c)
-  return s1_c_.Add();
-}
-inline const ::google::protobuf::RepeatedPtrField< ::S2 >&
-S1::s1_c() const {
-  // @@protoc_insertion_point(field_list:S1.s1_c)
-  return s1_c_;
-}
-inline ::google::protobuf::RepeatedPtrField< ::S2 >*
-S1::mutable_s1_c() {
-  // @@protoc_insertion_point(field_mutable_list:S1.s1_c)
-  return &s1_c_;
+inline void S3::set_s3_2(::google::protobuf::int32 value) {
+  set_has_s3_2();
+  s3_2_ = value;
+  // @@protoc_insertion_point(field_set:S3.s3_2)
 }
 
-// repeated int32 s1_d = 4;
-inline int S1::s1_d_size() const {
-  return s1_d_.size();
+// optional int32 s3_3 = 3;
+inline bool S3::has_s3_3() const {
+  return (_has_bits_[0] & 0x00000004u) != 0;
 }
-inline void S1::clear_s1_d() {
-  s1_d_.Clear();
+inline void S3::set_has_s3_3() {
+  _has_bits_[0] |= 0x00000004u;
 }
-inline ::google::protobuf::int32 S1::s1_d(int index) const {
-  // @@protoc_insertion_point(field_get:S1.s1_d)
-  return s1_d_.Get(index);
+inline void S3::clear_has_s3_3() {
+  _has_bits_[0] &= ~0x00000004u;
 }
-inline void S1::set_s1_d(int index, ::google::protobuf::int32 value) {
-  s1_d_.Set(index, value);
-  // @@protoc_insertion_point(field_set:S1.s1_d)
+inline void S3::clear_s3_3() {
+  s3_3_ = 0;
+  clear_has_s3_3();
 }
-inline void S1::add_s1_d(::google::protobuf::int32 value) {
-  s1_d_.Add(value);
-  // @@protoc_insertion_point(field_add:S1.s1_d)
+inline ::google::protobuf::int32 S3::s3_3() const {
+  // @@protoc_insertion_point(field_get:S3.s3_3)
+  return s3_3_;
 }
-inline const ::google::protobuf::RepeatedField< ::google::protobuf::int32 >&
-S1::s1_d() const {
-  // @@protoc_insertion_point(field_list:S1.s1_d)
-  return s1_d_;
-}
-inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
-S1::mutable_s1_d() {
-  // @@protoc_insertion_point(field_mutable_list:S1.s1_d)
-  return &s1_d_;
+inline void S3::set_s3_3(::google::protobuf::int32 value) {
+  set_has_s3_3();
+  s3_3_ = value;
+  // @@protoc_insertion_point(field_set:S3.s3_3)
 }
 
-// optional int32 s1_e = 5;
-inline bool S1::has_s1_e() const {
+// optional int32 s3_4 = 4;
+inline bool S3::has_s3_4() const {
+  return (_has_bits_[0] & 0x00000008u) != 0;
+}
+inline void S3::set_has_s3_4() {
+  _has_bits_[0] |= 0x00000008u;
+}
+inline void S3::clear_has_s3_4() {
+  _has_bits_[0] &= ~0x00000008u;
+}
+inline void S3::clear_s3_4() {
+  s3_4_ = 0;
+  clear_has_s3_4();
+}
+inline ::google::protobuf::int32 S3::s3_4() const {
+  // @@protoc_insertion_point(field_get:S3.s3_4)
+  return s3_4_;
+}
+inline void S3::set_s3_4(::google::protobuf::int32 value) {
+  set_has_s3_4();
+  s3_4_ = value;
+  // @@protoc_insertion_point(field_set:S3.s3_4)
+}
+
+// optional int64 s3_5 = 5;
+inline bool S3::has_s3_5() const {
   return (_has_bits_[0] & 0x00000010u) != 0;
 }
-inline void S1::set_has_s1_e() {
+inline void S3::set_has_s3_5() {
   _has_bits_[0] |= 0x00000010u;
 }
-inline void S1::clear_has_s1_e() {
+inline void S3::clear_has_s3_5() {
   _has_bits_[0] &= ~0x00000010u;
 }
-inline void S1::clear_s1_e() {
-  s1_e_ = 0;
-  clear_has_s1_e();
+inline void S3::clear_s3_5() {
+  s3_5_ = GOOGLE_LONGLONG(0);
+  clear_has_s3_5();
 }
-inline ::google::protobuf::int32 S1::s1_e() const {
-  // @@protoc_insertion_point(field_get:S1.s1_e)
-  return s1_e_;
+inline ::google::protobuf::int64 S3::s3_5() const {
+  // @@protoc_insertion_point(field_get:S3.s3_5)
+  return s3_5_;
 }
-inline void S1::set_s1_e(::google::protobuf::int32 value) {
-  set_has_s1_e();
-  s1_e_ = value;
-  // @@protoc_insertion_point(field_set:S1.s1_e)
+inline void S3::set_s3_5(::google::protobuf::int64 value) {
+  set_has_s3_5();
+  s3_5_ = value;
+  // @@protoc_insertion_point(field_set:S3.s3_5)
 }
 
-// optional int32 s1_f = 6;
-inline bool S1::has_s1_f() const {
+// optional int64 s3_6 = 6;
+inline bool S3::has_s3_6() const {
   return (_has_bits_[0] & 0x00000020u) != 0;
 }
-inline void S1::set_has_s1_f() {
+inline void S3::set_has_s3_6() {
   _has_bits_[0] |= 0x00000020u;
 }
-inline void S1::clear_has_s1_f() {
+inline void S3::clear_has_s3_6() {
   _has_bits_[0] &= ~0x00000020u;
 }
-inline void S1::clear_s1_f() {
-  s1_f_ = 0;
-  clear_has_s1_f();
+inline void S3::clear_s3_6() {
+  s3_6_ = GOOGLE_LONGLONG(0);
+  clear_has_s3_6();
 }
-inline ::google::protobuf::int32 S1::s1_f() const {
-  // @@protoc_insertion_point(field_get:S1.s1_f)
-  return s1_f_;
+inline ::google::protobuf::int64 S3::s3_6() const {
+  // @@protoc_insertion_point(field_get:S3.s3_6)
+  return s3_6_;
 }
-inline void S1::set_s1_f(::google::protobuf::int32 value) {
-  set_has_s1_f();
-  s1_f_ = value;
-  // @@protoc_insertion_point(field_set:S1.s1_f)
+inline void S3::set_s3_6(::google::protobuf::int64 value) {
+  set_has_s3_6();
+  s3_6_ = value;
+  // @@protoc_insertion_point(field_set:S3.s3_6)
 }
 
-// optional int32 s1_g = 7;
-inline bool S1::has_s1_g() const {
+// optional uint32 s3_7 = 7;
+inline bool S3::has_s3_7() const {
   return (_has_bits_[0] & 0x00000040u) != 0;
 }
-inline void S1::set_has_s1_g() {
+inline void S3::set_has_s3_7() {
   _has_bits_[0] |= 0x00000040u;
 }
-inline void S1::clear_has_s1_g() {
+inline void S3::clear_has_s3_7() {
   _has_bits_[0] &= ~0x00000040u;
 }
-inline void S1::clear_s1_g() {
-  s1_g_ = 0;
-  clear_has_s1_g();
+inline void S3::clear_s3_7() {
+  s3_7_ = 0u;
+  clear_has_s3_7();
 }
-inline ::google::protobuf::int32 S1::s1_g() const {
-  // @@protoc_insertion_point(field_get:S1.s1_g)
-  return s1_g_;
+inline ::google::protobuf::uint32 S3::s3_7() const {
+  // @@protoc_insertion_point(field_get:S3.s3_7)
+  return s3_7_;
 }
-inline void S1::set_s1_g(::google::protobuf::int32 value) {
-  set_has_s1_g();
-  s1_g_ = value;
-  // @@protoc_insertion_point(field_set:S1.s1_g)
+inline void S3::set_s3_7(::google::protobuf::uint32 value) {
+  set_has_s3_7();
+  s3_7_ = value;
+  // @@protoc_insertion_point(field_set:S3.s3_7)
 }
 
-// optional int32 s1_h = 8;
-inline bool S1::has_s1_h() const {
+// optional uint64 s3_8 = 8;
+inline bool S3::has_s3_8() const {
   return (_has_bits_[0] & 0x00000080u) != 0;
 }
-inline void S1::set_has_s1_h() {
+inline void S3::set_has_s3_8() {
   _has_bits_[0] |= 0x00000080u;
 }
-inline void S1::clear_has_s1_h() {
+inline void S3::clear_has_s3_8() {
   _has_bits_[0] &= ~0x00000080u;
 }
-inline void S1::clear_s1_h() {
-  s1_h_ = 0;
-  clear_has_s1_h();
+inline void S3::clear_s3_8() {
+  s3_8_ = GOOGLE_ULONGLONG(0);
+  clear_has_s3_8();
 }
-inline ::google::protobuf::int32 S1::s1_h() const {
-  // @@protoc_insertion_point(field_get:S1.s1_h)
-  return s1_h_;
+inline ::google::protobuf::uint64 S3::s3_8() const {
+  // @@protoc_insertion_point(field_get:S3.s3_8)
+  return s3_8_;
 }
-inline void S1::set_s1_h(::google::protobuf::int32 value) {
-  set_has_s1_h();
-  s1_h_ = value;
-  // @@protoc_insertion_point(field_set:S1.s1_h)
+inline void S3::set_s3_8(::google::protobuf::uint64 value) {
+  set_has_s3_8();
+  s3_8_ = value;
+  // @@protoc_insertion_point(field_set:S3.s3_8)
 }
 
-// optional int32 s1_i = 9;
-inline bool S1::has_s1_i() const {
+// optional sint32 s3_9 = 9;
+inline bool S3::has_s3_9() const {
   return (_has_bits_[0] & 0x00000100u) != 0;
 }
-inline void S1::set_has_s1_i() {
+inline void S3::set_has_s3_9() {
   _has_bits_[0] |= 0x00000100u;
 }
-inline void S1::clear_has_s1_i() {
+inline void S3::clear_has_s3_9() {
   _has_bits_[0] &= ~0x00000100u;
 }
-inline void S1::clear_s1_i() {
-  s1_i_ = 0;
-  clear_has_s1_i();
+inline void S3::clear_s3_9() {
+  s3_9_ = 0;
+  clear_has_s3_9();
 }
-inline ::google::protobuf::int32 S1::s1_i() const {
-  // @@protoc_insertion_point(field_get:S1.s1_i)
-  return s1_i_;
+inline ::google::protobuf::int32 S3::s3_9() const {
+  // @@protoc_insertion_point(field_get:S3.s3_9)
+  return s3_9_;
 }
-inline void S1::set_s1_i(::google::protobuf::int32 value) {
-  set_has_s1_i();
-  s1_i_ = value;
-  // @@protoc_insertion_point(field_set:S1.s1_i)
+inline void S3::set_s3_9(::google::protobuf::int32 value) {
+  set_has_s3_9();
+  s3_9_ = value;
+  // @@protoc_insertion_point(field_set:S3.s3_9)
 }
 
-// optional int32 s1_j = 10;
-inline bool S1::has_s1_j() const {
+// optional sint64 s3_10 = 10;
+inline bool S3::has_s3_10() const {
   return (_has_bits_[0] & 0x00000200u) != 0;
 }
-inline void S1::set_has_s1_j() {
+inline void S3::set_has_s3_10() {
   _has_bits_[0] |= 0x00000200u;
 }
-inline void S1::clear_has_s1_j() {
+inline void S3::clear_has_s3_10() {
   _has_bits_[0] &= ~0x00000200u;
 }
-inline void S1::clear_s1_j() {
-  s1_j_ = 0;
-  clear_has_s1_j();
+inline void S3::clear_s3_10() {
+  s3_10_ = GOOGLE_LONGLONG(0);
+  clear_has_s3_10();
 }
-inline ::google::protobuf::int32 S1::s1_j() const {
-  // @@protoc_insertion_point(field_get:S1.s1_j)
-  return s1_j_;
+inline ::google::protobuf::int64 S3::s3_10() const {
+  // @@protoc_insertion_point(field_get:S3.s3_10)
+  return s3_10_;
 }
-inline void S1::set_s1_j(::google::protobuf::int32 value) {
-  set_has_s1_j();
-  s1_j_ = value;
-  // @@protoc_insertion_point(field_set:S1.s1_j)
+inline void S3::set_s3_10(::google::protobuf::int64 value) {
+  set_has_s3_10();
+  s3_10_ = value;
+  // @@protoc_insertion_point(field_set:S3.s3_10)
 }
 
-// optional int32 s1_k = 11;
-inline bool S1::has_s1_k() const {
+// optional int32 s3_64 = 64;
+inline bool S3::has_s3_64() const {
   return (_has_bits_[0] & 0x00000400u) != 0;
 }
-inline void S1::set_has_s1_k() {
+inline void S3::set_has_s3_64() {
   _has_bits_[0] |= 0x00000400u;
 }
-inline void S1::clear_has_s1_k() {
+inline void S3::clear_has_s3_64() {
   _has_bits_[0] &= ~0x00000400u;
 }
-inline void S1::clear_s1_k() {
-  s1_k_ = 0;
-  clear_has_s1_k();
+inline void S3::clear_s3_64() {
+  s3_64_ = 0;
+  clear_has_s3_64();
 }
-inline ::google::protobuf::int32 S1::s1_k() const {
-  // @@protoc_insertion_point(field_get:S1.s1_k)
-  return s1_k_;
+inline ::google::protobuf::int32 S3::s3_64() const {
+  // @@protoc_insertion_point(field_get:S3.s3_64)
+  return s3_64_;
 }
-inline void S1::set_s1_k(::google::protobuf::int32 value) {
-  set_has_s1_k();
-  s1_k_ = value;
-  // @@protoc_insertion_point(field_set:S1.s1_k)
+inline void S3::set_s3_64(::google::protobuf::int32 value) {
+  set_has_s3_64();
+  s3_64_ = value;
+  // @@protoc_insertion_point(field_set:S3.s3_64)
 }
 
-// optional int32 s1_l = 12;
-inline bool S1::has_s1_l() const {
+// optional .E1 s3_65 = 65;
+inline bool S3::has_s3_65() const {
   return (_has_bits_[0] & 0x00000800u) != 0;
 }
-inline void S1::set_has_s1_l() {
+inline void S3::set_has_s3_65() {
   _has_bits_[0] |= 0x00000800u;
 }
-inline void S1::clear_has_s1_l() {
+inline void S3::clear_has_s3_65() {
   _has_bits_[0] &= ~0x00000800u;
 }
-inline void S1::clear_s1_l() {
-  s1_l_ = 0;
-  clear_has_s1_l();
+inline void S3::clear_s3_65() {
+  s3_65_ = 0;
+  clear_has_s3_65();
 }
-inline ::google::protobuf::int32 S1::s1_l() const {
-  // @@protoc_insertion_point(field_get:S1.s1_l)
-  return s1_l_;
+inline ::E1 S3::s3_65() const {
+  // @@protoc_insertion_point(field_get:S3.s3_65)
+  return static_cast< ::E1 >(s3_65_);
 }
-inline void S1::set_s1_l(::google::protobuf::int32 value) {
-  set_has_s1_l();
-  s1_l_ = value;
-  // @@protoc_insertion_point(field_set:S1.s1_l)
+inline void S3::set_s3_65(::E1 value) {
+  assert(::E1_IsValid(value));
+  set_has_s3_65();
+  s3_65_ = value;
+  // @@protoc_insertion_point(field_set:S3.s3_65)
 }
 
-// optional int32 s1_m = 13;
-inline bool S1::has_s1_m() const {
+// optional bool s3_66 = 66;
+inline bool S3::has_s3_66() const {
   return (_has_bits_[0] & 0x00001000u) != 0;
 }
-inline void S1::set_has_s1_m() {
+inline void S3::set_has_s3_66() {
   _has_bits_[0] |= 0x00001000u;
 }
-inline void S1::clear_has_s1_m() {
+inline void S3::clear_has_s3_66() {
   _has_bits_[0] &= ~0x00001000u;
 }
-inline void S1::clear_s1_m() {
-  s1_m_ = 0;
-  clear_has_s1_m();
+inline void S3::clear_s3_66() {
+  s3_66_ = false;
+  clear_has_s3_66();
 }
-inline ::google::protobuf::int32 S1::s1_m() const {
-  // @@protoc_insertion_point(field_get:S1.s1_m)
-  return s1_m_;
+inline bool S3::s3_66() const {
+  // @@protoc_insertion_point(field_get:S3.s3_66)
+  return s3_66_;
 }
-inline void S1::set_s1_m(::google::protobuf::int32 value) {
-  set_has_s1_m();
-  s1_m_ = value;
-  // @@protoc_insertion_point(field_set:S1.s1_m)
+inline void S3::set_s3_66(bool value) {
+  set_has_s3_66();
+  s3_66_ = value;
+  // @@protoc_insertion_point(field_set:S3.s3_66)
 }
 
-// optional int32 s1_n = 14;
-inline bool S1::has_s1_n() const {
+// optional float s3_12 = 12;
+inline bool S3::has_s3_12() const {
   return (_has_bits_[0] & 0x00002000u) != 0;
 }
-inline void S1::set_has_s1_n() {
+inline void S3::set_has_s3_12() {
   _has_bits_[0] |= 0x00002000u;
 }
-inline void S1::clear_has_s1_n() {
+inline void S3::clear_has_s3_12() {
   _has_bits_[0] &= ~0x00002000u;
 }
-inline void S1::clear_s1_n() {
-  s1_n_ = 0;
-  clear_has_s1_n();
+inline void S3::clear_s3_12() {
+  s3_12_ = 0;
+  clear_has_s3_12();
 }
-inline ::google::protobuf::int32 S1::s1_n() const {
-  // @@protoc_insertion_point(field_get:S1.s1_n)
-  return s1_n_;
+inline float S3::s3_12() const {
+  // @@protoc_insertion_point(field_get:S3.s3_12)
+  return s3_12_;
 }
-inline void S1::set_s1_n(::google::protobuf::int32 value) {
-  set_has_s1_n();
-  s1_n_ = value;
-  // @@protoc_insertion_point(field_set:S1.s1_n)
+inline void S3::set_s3_12(float value) {
+  set_has_s3_12();
+  s3_12_ = value;
+  // @@protoc_insertion_point(field_set:S3.s3_12)
 }
 
-// optional int32 s1_o = 15;
-inline bool S1::has_s1_o() const {
+// optional fixed32 s3_13 = 13;
+inline bool S3::has_s3_13() const {
   return (_has_bits_[0] & 0x00004000u) != 0;
 }
-inline void S1::set_has_s1_o() {
+inline void S3::set_has_s3_13() {
   _has_bits_[0] |= 0x00004000u;
 }
-inline void S1::clear_has_s1_o() {
+inline void S3::clear_has_s3_13() {
   _has_bits_[0] &= ~0x00004000u;
 }
-inline void S1::clear_s1_o() {
-  s1_o_ = 0;
-  clear_has_s1_o();
+inline void S3::clear_s3_13() {
+  s3_13_ = 0u;
+  clear_has_s3_13();
 }
-inline ::google::protobuf::int32 S1::s1_o() const {
-  // @@protoc_insertion_point(field_get:S1.s1_o)
-  return s1_o_;
+inline ::google::protobuf::uint32 S3::s3_13() const {
+  // @@protoc_insertion_point(field_get:S3.s3_13)
+  return s3_13_;
 }
-inline void S1::set_s1_o(::google::protobuf::int32 value) {
-  set_has_s1_o();
-  s1_o_ = value;
-  // @@protoc_insertion_point(field_set:S1.s1_o)
+inline void S3::set_s3_13(::google::protobuf::uint32 value) {
+  set_has_s3_13();
+  s3_13_ = value;
+  // @@protoc_insertion_point(field_set:S3.s3_13)
 }
 
-// optional int32 s1_p = 16;
-inline bool S1::has_s1_p() const {
+// optional sfixed32 s3_14 = 14;
+inline bool S3::has_s3_14() const {
   return (_has_bits_[0] & 0x00008000u) != 0;
 }
-inline void S1::set_has_s1_p() {
+inline void S3::set_has_s3_14() {
   _has_bits_[0] |= 0x00008000u;
 }
-inline void S1::clear_has_s1_p() {
+inline void S3::clear_has_s3_14() {
   _has_bits_[0] &= ~0x00008000u;
 }
-inline void S1::clear_s1_p() {
-  s1_p_ = 0;
-  clear_has_s1_p();
+inline void S3::clear_s3_14() {
+  s3_14_ = 0;
+  clear_has_s3_14();
 }
-inline ::google::protobuf::int32 S1::s1_p() const {
-  // @@protoc_insertion_point(field_get:S1.s1_p)
-  return s1_p_;
+inline ::google::protobuf::int32 S3::s3_14() const {
+  // @@protoc_insertion_point(field_get:S3.s3_14)
+  return s3_14_;
 }
-inline void S1::set_s1_p(::google::protobuf::int32 value) {
-  set_has_s1_p();
-  s1_p_ = value;
-  // @@protoc_insertion_point(field_set:S1.s1_p)
+inline void S3::set_s3_14(::google::protobuf::int32 value) {
+  set_has_s3_14();
+  s3_14_ = value;
+  // @@protoc_insertion_point(field_set:S3.s3_14)
 }
 
-// optional int32 s1_q = 17;
-inline bool S1::has_s1_q() const {
+// optional double s3_15 = 15;
+inline bool S3::has_s3_15() const {
   return (_has_bits_[0] & 0x00010000u) != 0;
 }
-inline void S1::set_has_s1_q() {
+inline void S3::set_has_s3_15() {
   _has_bits_[0] |= 0x00010000u;
 }
-inline void S1::clear_has_s1_q() {
+inline void S3::clear_has_s3_15() {
   _has_bits_[0] &= ~0x00010000u;
 }
-inline void S1::clear_s1_q() {
-  s1_q_ = 0;
-  clear_has_s1_q();
+inline void S3::clear_s3_15() {
+  s3_15_ = 0;
+  clear_has_s3_15();
 }
-inline ::google::protobuf::int32 S1::s1_q() const {
-  // @@protoc_insertion_point(field_get:S1.s1_q)
-  return s1_q_;
+inline double S3::s3_15() const {
+  // @@protoc_insertion_point(field_get:S3.s3_15)
+  return s3_15_;
 }
-inline void S1::set_s1_q(::google::protobuf::int32 value) {
-  set_has_s1_q();
-  s1_q_ = value;
-  // @@protoc_insertion_point(field_set:S1.s1_q)
+inline void S3::set_s3_15(double value) {
+  set_has_s3_15();
+  s3_15_ = value;
+  // @@protoc_insertion_point(field_set:S3.s3_15)
 }
 
-// optional int32 s1_r = 18;
-inline bool S1::has_s1_r() const {
+// optional fixed64 s3_16 = 16;
+inline bool S3::has_s3_16() const {
   return (_has_bits_[0] & 0x00020000u) != 0;
 }
-inline void S1::set_has_s1_r() {
+inline void S3::set_has_s3_16() {
   _has_bits_[0] |= 0x00020000u;
 }
-inline void S1::clear_has_s1_r() {
+inline void S3::clear_has_s3_16() {
   _has_bits_[0] &= ~0x00020000u;
 }
-inline void S1::clear_s1_r() {
-  s1_r_ = 0;
-  clear_has_s1_r();
+inline void S3::clear_s3_16() {
+  s3_16_ = GOOGLE_ULONGLONG(0);
+  clear_has_s3_16();
 }
-inline ::google::protobuf::int32 S1::s1_r() const {
-  // @@protoc_insertion_point(field_get:S1.s1_r)
-  return s1_r_;
+inline ::google::protobuf::uint64 S3::s3_16() const {
+  // @@protoc_insertion_point(field_get:S3.s3_16)
+  return s3_16_;
 }
-inline void S1::set_s1_r(::google::protobuf::int32 value) {
-  set_has_s1_r();
-  s1_r_ = value;
-  // @@protoc_insertion_point(field_set:S1.s1_r)
+inline void S3::set_s3_16(::google::protobuf::uint64 value) {
+  set_has_s3_16();
+  s3_16_ = value;
+  // @@protoc_insertion_point(field_set:S3.s3_16)
 }
 
-// optional int32 s1_s = 19;
-inline bool S1::has_s1_s() const {
+// optional sfixed64 s3_17 = 17;
+inline bool S3::has_s3_17() const {
   return (_has_bits_[0] & 0x00040000u) != 0;
 }
-inline void S1::set_has_s1_s() {
+inline void S3::set_has_s3_17() {
   _has_bits_[0] |= 0x00040000u;
 }
-inline void S1::clear_has_s1_s() {
+inline void S3::clear_has_s3_17() {
   _has_bits_[0] &= ~0x00040000u;
 }
-inline void S1::clear_s1_s() {
-  s1_s_ = 0;
-  clear_has_s1_s();
+inline void S3::clear_s3_17() {
+  s3_17_ = GOOGLE_LONGLONG(0);
+  clear_has_s3_17();
 }
-inline ::google::protobuf::int32 S1::s1_s() const {
-  // @@protoc_insertion_point(field_get:S1.s1_s)
-  return s1_s_;
+inline ::google::protobuf::int64 S3::s3_17() const {
+  // @@protoc_insertion_point(field_get:S3.s3_17)
+  return s3_17_;
 }
-inline void S1::set_s1_s(::google::protobuf::int32 value) {
-  set_has_s1_s();
-  s1_s_ = value;
-  // @@protoc_insertion_point(field_set:S1.s1_s)
+inline void S3::set_s3_17(::google::protobuf::int64 value) {
+  set_has_s3_17();
+  s3_17_ = value;
+  // @@protoc_insertion_point(field_set:S3.s3_17)
 }
 
-// optional int32 s1_t = 20;
-inline bool S1::has_s1_t() const {
+// optional string s3_18 = 18;
+inline bool S3::has_s3_18() const {
   return (_has_bits_[0] & 0x00080000u) != 0;
 }
-inline void S1::set_has_s1_t() {
+inline void S3::set_has_s3_18() {
   _has_bits_[0] |= 0x00080000u;
 }
-inline void S1::clear_has_s1_t() {
+inline void S3::clear_has_s3_18() {
   _has_bits_[0] &= ~0x00080000u;
 }
-inline void S1::clear_s1_t() {
-  s1_t_ = 0;
-  clear_has_s1_t();
+inline void S3::clear_s3_18() {
+  if (s3_18_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    s3_18_->clear();
+  }
+  clear_has_s3_18();
 }
-inline ::google::protobuf::int32 S1::s1_t() const {
-  // @@protoc_insertion_point(field_get:S1.s1_t)
-  return s1_t_;
+inline const ::std::string& S3::s3_18() const {
+  // @@protoc_insertion_point(field_get:S3.s3_18)
+  return *s3_18_;
 }
-inline void S1::set_s1_t(::google::protobuf::int32 value) {
-  set_has_s1_t();
-  s1_t_ = value;
-  // @@protoc_insertion_point(field_set:S1.s1_t)
+inline void S3::set_s3_18(const ::std::string& value) {
+  set_has_s3_18();
+  if (s3_18_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    s3_18_ = new ::std::string;
+  }
+  s3_18_->assign(value);
+  // @@protoc_insertion_point(field_set:S3.s3_18)
+}
+inline void S3::set_s3_18(const char* value) {
+  set_has_s3_18();
+  if (s3_18_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    s3_18_ = new ::std::string;
+  }
+  s3_18_->assign(value);
+  // @@protoc_insertion_point(field_set_char:S3.s3_18)
+}
+inline void S3::set_s3_18(const char* value, size_t size) {
+  set_has_s3_18();
+  if (s3_18_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    s3_18_ = new ::std::string;
+  }
+  s3_18_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:S3.s3_18)
+}
+inline ::std::string* S3::mutable_s3_18() {
+  set_has_s3_18();
+  if (s3_18_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    s3_18_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:S3.s3_18)
+  return s3_18_;
+}
+inline ::std::string* S3::release_s3_18() {
+  clear_has_s3_18();
+  if (s3_18_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = s3_18_;
+    s3_18_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void S3::set_allocated_s3_18(::std::string* s3_18) {
+  if (s3_18_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete s3_18_;
+  }
+  if (s3_18) {
+    set_has_s3_18();
+    s3_18_ = s3_18;
+  } else {
+    clear_has_s3_18();
+    s3_18_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:S3.s3_18)
+}
+
+// optional bytes s3_19 = 19;
+inline bool S3::has_s3_19() const {
+  return (_has_bits_[0] & 0x00100000u) != 0;
+}
+inline void S3::set_has_s3_19() {
+  _has_bits_[0] |= 0x00100000u;
+}
+inline void S3::clear_has_s3_19() {
+  _has_bits_[0] &= ~0x00100000u;
+}
+inline void S3::clear_s3_19() {
+  if (s3_19_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    s3_19_->clear();
+  }
+  clear_has_s3_19();
+}
+inline const ::std::string& S3::s3_19() const {
+  // @@protoc_insertion_point(field_get:S3.s3_19)
+  return *s3_19_;
+}
+inline void S3::set_s3_19(const ::std::string& value) {
+  set_has_s3_19();
+  if (s3_19_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    s3_19_ = new ::std::string;
+  }
+  s3_19_->assign(value);
+  // @@protoc_insertion_point(field_set:S3.s3_19)
+}
+inline void S3::set_s3_19(const char* value) {
+  set_has_s3_19();
+  if (s3_19_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    s3_19_ = new ::std::string;
+  }
+  s3_19_->assign(value);
+  // @@protoc_insertion_point(field_set_char:S3.s3_19)
+}
+inline void S3::set_s3_19(const void* value, size_t size) {
+  set_has_s3_19();
+  if (s3_19_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    s3_19_ = new ::std::string;
+  }
+  s3_19_->assign(reinterpret_cast<const char*>(value), size);
+  // @@protoc_insertion_point(field_set_pointer:S3.s3_19)
+}
+inline ::std::string* S3::mutable_s3_19() {
+  set_has_s3_19();
+  if (s3_19_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    s3_19_ = new ::std::string;
+  }
+  // @@protoc_insertion_point(field_mutable:S3.s3_19)
+  return s3_19_;
+}
+inline ::std::string* S3::release_s3_19() {
+  clear_has_s3_19();
+  if (s3_19_ == &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    return NULL;
+  } else {
+    ::std::string* temp = s3_19_;
+    s3_19_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+    return temp;
+  }
+}
+inline void S3::set_allocated_s3_19(::std::string* s3_19) {
+  if (s3_19_ != &::google::protobuf::internal::GetEmptyStringAlreadyInited()) {
+    delete s3_19_;
+  }
+  if (s3_19) {
+    set_has_s3_19();
+    s3_19_ = s3_19;
+  } else {
+    clear_has_s3_19();
+    s3_19_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
+  }
+  // @@protoc_insertion_point(field_set_allocated:S3.s3_19)
+}
+
+// repeated int32 s3_20 = 20;
+inline int S3::s3_20_size() const {
+  return s3_20_.size();
+}
+inline void S3::clear_s3_20() {
+  s3_20_.Clear();
+}
+inline ::google::protobuf::int32 S3::s3_20(int index) const {
+  // @@protoc_insertion_point(field_get:S3.s3_20)
+  return s3_20_.Get(index);
+}
+inline void S3::set_s3_20(int index, ::google::protobuf::int32 value) {
+  s3_20_.Set(index, value);
+  // @@protoc_insertion_point(field_set:S3.s3_20)
+}
+inline void S3::add_s3_20(::google::protobuf::int32 value) {
+  s3_20_.Add(value);
+  // @@protoc_insertion_point(field_add:S3.s3_20)
+}
+inline const ::google::protobuf::RepeatedField< ::google::protobuf::int32 >&
+S3::s3_20() const {
+  // @@protoc_insertion_point(field_list:S3.s3_20)
+  return s3_20_;
+}
+inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
+S3::mutable_s3_20() {
+  // @@protoc_insertion_point(field_mutable_list:S3.s3_20)
+  return &s3_20_;
+}
+
+// repeated int32 s3_21 = 21 [packed = true];
+inline int S3::s3_21_size() const {
+  return s3_21_.size();
+}
+inline void S3::clear_s3_21() {
+  s3_21_.Clear();
+}
+inline ::google::protobuf::int32 S3::s3_21(int index) const {
+  // @@protoc_insertion_point(field_get:S3.s3_21)
+  return s3_21_.Get(index);
+}
+inline void S3::set_s3_21(int index, ::google::protobuf::int32 value) {
+  s3_21_.Set(index, value);
+  // @@protoc_insertion_point(field_set:S3.s3_21)
+}
+inline void S3::add_s3_21(::google::protobuf::int32 value) {
+  s3_21_.Add(value);
+  // @@protoc_insertion_point(field_add:S3.s3_21)
+}
+inline const ::google::protobuf::RepeatedField< ::google::protobuf::int32 >&
+S3::s3_21() const {
+  // @@protoc_insertion_point(field_list:S3.s3_21)
+  return s3_21_;
+}
+inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
+S3::mutable_s3_21() {
+  // @@protoc_insertion_point(field_mutable_list:S3.s3_21)
+  return &s3_21_;
+}
+
+// optional .S1 s3_22 = 22;
+inline bool S3::has_s3_22() const {
+  return (_has_bits_[0] & 0x00800000u) != 0;
+}
+inline void S3::set_has_s3_22() {
+  _has_bits_[0] |= 0x00800000u;
+}
+inline void S3::clear_has_s3_22() {
+  _has_bits_[0] &= ~0x00800000u;
+}
+inline void S3::clear_s3_22() {
+  if (s3_22_ != NULL) s3_22_->::S1::Clear();
+  clear_has_s3_22();
+}
+inline const ::S1& S3::s3_22() const {
+  // @@protoc_insertion_point(field_get:S3.s3_22)
+  return s3_22_ != NULL ? *s3_22_ : *default_instance_->s3_22_;
+}
+inline ::S1* S3::mutable_s3_22() {
+  set_has_s3_22();
+  if (s3_22_ == NULL) s3_22_ = new ::S1;
+  // @@protoc_insertion_point(field_mutable:S3.s3_22)
+  return s3_22_;
+}
+inline ::S1* S3::release_s3_22() {
+  clear_has_s3_22();
+  ::S1* temp = s3_22_;
+  s3_22_ = NULL;
+  return temp;
+}
+inline void S3::set_allocated_s3_22(::S1* s3_22) {
+  delete s3_22_;
+  s3_22_ = s3_22;
+  if (s3_22) {
+    set_has_s3_22();
+  } else {
+    clear_has_s3_22();
+  }
+  // @@protoc_insertion_point(field_set_allocated:S3.s3_22)
+}
+
+// required .S2 s3_23 = 23;
+inline bool S3::has_s3_23() const {
+  return (_has_bits_[0] & 0x01000000u) != 0;
+}
+inline void S3::set_has_s3_23() {
+  _has_bits_[0] |= 0x01000000u;
+}
+inline void S3::clear_has_s3_23() {
+  _has_bits_[0] &= ~0x01000000u;
+}
+inline void S3::clear_s3_23() {
+  if (s3_23_ != NULL) s3_23_->::S2::Clear();
+  clear_has_s3_23();
+}
+inline const ::S2& S3::s3_23() const {
+  // @@protoc_insertion_point(field_get:S3.s3_23)
+  return s3_23_ != NULL ? *s3_23_ : *default_instance_->s3_23_;
+}
+inline ::S2* S3::mutable_s3_23() {
+  set_has_s3_23();
+  if (s3_23_ == NULL) s3_23_ = new ::S2;
+  // @@protoc_insertion_point(field_mutable:S3.s3_23)
+  return s3_23_;
+}
+inline ::S2* S3::release_s3_23() {
+  clear_has_s3_23();
+  ::S2* temp = s3_23_;
+  s3_23_ = NULL;
+  return temp;
+}
+inline void S3::set_allocated_s3_23(::S2* s3_23) {
+  delete s3_23_;
+  s3_23_ = s3_23;
+  if (s3_23) {
+    set_has_s3_23();
+  } else {
+    clear_has_s3_23();
+  }
+  // @@protoc_insertion_point(field_set_allocated:S3.s3_23)
 }
 
 
@@ -1013,6 +1557,11 @@ inline void S1::set_s1_t(::google::protobuf::int32 value) {
 namespace google {
 namespace protobuf {
 
+template <> struct is_proto_enum< ::E1> : ::google::protobuf::internal::true_type {};
+template <>
+inline const EnumDescriptor* GetEnumDescriptor< ::E1>() {
+  return ::E1_descriptor();
+}
 
 }  // namespace google
 }  // namespace protobuf
