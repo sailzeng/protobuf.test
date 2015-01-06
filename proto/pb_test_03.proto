@@ -1,50 +1,43 @@
-//option optimize_for = LITE_RUNTIME;
-//package N01.N02;
-
-message S1
+message S2
 {
 	optional int32 s2_1 = 1;
 	optional string s2_2 = 2 ;
 }
 
-message S2
-{
-	optional int32 s2_a = 1;
-	optional string s2_b = 2 ;
-}
-
 enum E1 
 {
-	E1_1 = 0;
-	E1_2 = 1;
-	E1_3 = 2;
+	E1_1 = 1;
+	E1_3 = 3;
+	E1_5 = 5;
 }
 
 message  S3
 {
-	optional int32 s3_1 = 1;
-	optional int32 s3_2 = 2;
-	optional int32 s3_3 = 3;
-	optional int32 s3_4 = 4;
-	optional int64 s3_5 = 5;
-	optional int64 s3_6 = 6;
-	optional uint32 s3_7 = 7;
-	optional uint64 s3_8 = 8;
-	optional sint32 s3_9 = 9;
-	optional sint64 s3_10 = 10;
-	optional int32 s3_64 = 64;   //注意这个tag id
-	optional E1 s3_65 = 65;     //注意这个tag id
-	optional bool s3_66 = 66;   //注意这个tag id
-	optional float s3_12 = 12;
-	optional fixed32 s3_13 = 13;
-	optional sfixed32 s3_14 = 14;
-	optional double s3_15 = 15;
-	optional fixed64 s3_16 = 16;
-	optional sfixed64 s3_17 = 17;
-	optional string s3_18 = 18;
-	optional bytes s3_19 = 19;
-	repeated int32 s3_20 = 20;
-	repeated int32 s3_21 = 21 [packed = true];
-	optional S1 s3_22 = 22;
-	required S2 s3_23 = 23;
+	optional int32 s3_1 = 1;      //设置为0x88
+	optional int32 s3_2 = 2;      //设置为0x8888
+	optional uint32 s3_3 = 3;     //设置为0xE8E8E8
+	optional uint32 s3_4 = 4;     //设置为0xE8E8E8E8
+	optional int64 s3_5 = 5;      //设置为0x8888
+	optional int64 s3_6 = 6;      //设置为0xE8E8E8E8
+	optional uint64 s3_7 = 7;     //设置为0xE8E8E8E8
+	optional uint64 s3_8 = 8;     //设置为0xE8E8E8E8E8E8E8E8
+	optional sint32 s3_9 = 9;     //设置为0x8888
+	optional sint32 s3_10 = 10;   //设置为-0x8888
+	optional sint64 s3_64 = 64;   //注意这个tag id  设置为0xE8E8E8E8
+	optional sint64 s3_65 = 65;   //注意这个tag id  设置为-0xE8E8E8E8
+	optional E1 s3_11 = 11;       //设置为E1_5
+	optional bool s3_12 = 12;     //设置为true
+	optional float s3_13 = 13;    //设置 float，设置为88.888
+	optional fixed32 s3_14 = 14;  //设置为 0x8888
+	optional sfixed32 s3_15 = 15; //设置为 -0x8888
+	optional double s3_16 = 16;   //设置 double，设置为8888.8888
+	optional fixed64 s3_17 = 17;  //设置为 0x8888888888
+	optional sfixed64 s3_18 = 18; //设置为 -0x8888888888
+	optional string s3_19 = 19;   //设置为 "I love you,C++!"
+	optional bytes s3_20 = 20;    //设置为 "I hate you,C++!"
+	repeated int32 s3_21 = 21;    //设置为3, 270, and 86942, 用google文档的例子
+	repeated int32 s3_22 = 22 [packed = true]; //设置为3, 270, and 86942
+	repeated string s3_23 = 23;   //设置为"love","hate","C++"
+	optional S2 s3_24 = 24;       //设置为 0x1,"love"
+	repeated S2 s3_25 = 25;       //设置为 0x16,"love"  and 0x16,"hate"
 }
