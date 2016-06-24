@@ -429,6 +429,25 @@ class S3 : public ::google::protobuf::Message {
   inline ::google::protobuf::RepeatedPtrField< ::S2 >*
       mutable_s3_25();
 
+  // repeated fixed32 s3_26 = 26;
+  inline int s3_26_size() const;
+  inline void clear_s3_26();
+  static const int kS326FieldNumber = 26;
+  inline ::google::protobuf::uint32 s3_26(int index) const;
+  inline void set_s3_26(int index, ::google::protobuf::uint32 value);
+  inline void add_s3_26(::google::protobuf::uint32 value);
+  inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
+      s3_26() const;
+  inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
+      mutable_s3_26();
+
+  // optional int32 s3_27 = 27;
+  inline bool has_s3_27() const;
+  inline void clear_s3_27();
+  static const int kS327FieldNumber = 27;
+  inline ::google::protobuf::int32 s3_27() const;
+  inline void set_s3_27(::google::protobuf::int32 value);
+
   // @@protoc_insertion_point(class_scope:S3)
  private:
   inline void set_has_s3_1();
@@ -477,6 +496,8 @@ class S3 : public ::google::protobuf::Message {
   inline void clear_has_s3_20();
   inline void set_has_s3_24();
   inline void clear_has_s3_24();
+  inline void set_has_s3_27();
+  inline void clear_has_s3_27();
 
   ::google::protobuf::UnknownFieldSet _unknown_fields_;
 
@@ -504,12 +525,14 @@ class S3 : public ::google::protobuf::Message {
   ::std::string* s3_19_;
   ::std::string* s3_20_;
   ::google::protobuf::RepeatedField< ::google::protobuf::int32 > s3_21_;
+  ::google::protobuf::int32 s3_15_;
+  ::google::protobuf::int32 s3_27_;
   ::google::protobuf::RepeatedField< ::google::protobuf::int32 > s3_22_;
   mutable int _s3_22_cached_byte_size_;
   ::google::protobuf::RepeatedPtrField< ::std::string> s3_23_;
   ::S2* s3_24_;
   ::google::protobuf::RepeatedPtrField< ::S2 > s3_25_;
-  ::google::protobuf::int32 s3_15_;
+  ::google::protobuf::RepeatedField< ::google::protobuf::uint32 > s3_26_;
   friend void  protobuf_AddDesc_pb_5ftest_5f03_2eproto();
   friend void protobuf_AssignDesc_pb_5ftest_5f03_2eproto();
   friend void protobuf_ShutdownFile_pb_5ftest_5f03_2eproto();
@@ -1444,6 +1467,60 @@ inline ::google::protobuf::RepeatedPtrField< ::S2 >*
 S3::mutable_s3_25() {
   // @@protoc_insertion_point(field_mutable_list:S3.s3_25)
   return &s3_25_;
+}
+
+// repeated fixed32 s3_26 = 26;
+inline int S3::s3_26_size() const {
+  return s3_26_.size();
+}
+inline void S3::clear_s3_26() {
+  s3_26_.Clear();
+}
+inline ::google::protobuf::uint32 S3::s3_26(int index) const {
+  // @@protoc_insertion_point(field_get:S3.s3_26)
+  return s3_26_.Get(index);
+}
+inline void S3::set_s3_26(int index, ::google::protobuf::uint32 value) {
+  s3_26_.Set(index, value);
+  // @@protoc_insertion_point(field_set:S3.s3_26)
+}
+inline void S3::add_s3_26(::google::protobuf::uint32 value) {
+  s3_26_.Add(value);
+  // @@protoc_insertion_point(field_add:S3.s3_26)
+}
+inline const ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >&
+S3::s3_26() const {
+  // @@protoc_insertion_point(field_list:S3.s3_26)
+  return s3_26_;
+}
+inline ::google::protobuf::RepeatedField< ::google::protobuf::uint32 >*
+S3::mutable_s3_26() {
+  // @@protoc_insertion_point(field_mutable_list:S3.s3_26)
+  return &s3_26_;
+}
+
+// optional int32 s3_27 = 27;
+inline bool S3::has_s3_27() const {
+  return (_has_bits_[0] & 0x10000000u) != 0;
+}
+inline void S3::set_has_s3_27() {
+  _has_bits_[0] |= 0x10000000u;
+}
+inline void S3::clear_has_s3_27() {
+  _has_bits_[0] &= ~0x10000000u;
+}
+inline void S3::clear_s3_27() {
+  s3_27_ = 0;
+  clear_has_s3_27();
+}
+inline ::google::protobuf::int32 S3::s3_27() const {
+  // @@protoc_insertion_point(field_get:S3.s3_27)
+  return s3_27_;
+}
+inline void S3::set_s3_27(::google::protobuf::int32 value) {
+  set_has_s3_27();
+  s3_27_ = value;
+  // @@protoc_insertion_point(field_set:S3.s3_27)
 }
 
 

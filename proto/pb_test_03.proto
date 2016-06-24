@@ -40,5 +40,6 @@ message  S3
 	repeated string s3_23 = 23;   //设置为"love","hate","C++"
 	optional S2 s3_24 = 24;       //设置为 0x1,"love"
 	repeated S2 s3_25 = 25;       //设置为 0x16,"love"  and 0x16,"hate"
-	optional int32 s3_26 = 26;    //不设置
+	repeated fixed32 s3_26 = 26;  //设置为1，2，3
+	optional int32 s3_27 = 27;    //不设置
 }

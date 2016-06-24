@@ -77,6 +77,11 @@ int main(int argc, char *argv[])
     s2_p->set_s2_1(22);
     s2_p->set_s2_2("hate");
 
+
+    s3_src.add_s3_26(1);
+    s3_src.add_s3_26(2);
+    s3_src.add_s3_26(3);
+
     char buffer[64 * 1024];
     size_t buf_use = 0;
     if (s3_src.IsInitialized())
@@ -90,6 +95,9 @@ int main(int argc, char *argv[])
         {
             assert(false);
         }
+
+        std::string out_string;
+        s3_src.SerializeToString(&out_string);
     }
     else
     {

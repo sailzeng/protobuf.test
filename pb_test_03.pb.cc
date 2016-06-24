@@ -52,7 +52,7 @@ void protobuf_AssignDesc_pb_5ftest_5f03_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(S2));
   S3_descriptor_ = file->message_type(1);
-  static const int S3_offsets_[27] = {
+  static const int S3_offsets_[29] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(S3, s3_1_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(S3, s3_2_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(S3, s3_3_),
@@ -80,6 +80,8 @@ void protobuf_AssignDesc_pb_5ftest_5f03_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(S3, s3_23_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(S3, s3_24_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(S3, s3_25_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(S3, s3_26_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(S3, s3_27_),
   };
   S3_reflection_ =
     new ::google::protobuf::internal::GeneratedMessageReflection(
@@ -128,7 +130,7 @@ void protobuf_AddDesc_pb_5ftest_5f03_2eproto() {
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
     "\n\020pb_test_03.proto\" \n\002S2\022\014\n\004s2_1\030\001 \001(\005\022\014"
-    "\n\004s2_2\030\002 \001(\t\"\243\003\n\002S3\022\014\n\004s3_1\030\001 \001(\005\022\014\n\004s3_"
+    "\n\004s2_2\030\002 \001(\t\"\301\003\n\002S3\022\014\n\004s3_1\030\001 \001(\005\022\014\n\004s3_"
     "2\030\002 \001(\005\022\014\n\004s3_3\030\003 \001(\r\022\014\n\004s3_4\030\004 \001(\r\022\014\n\004s"
     "3_5\030\005 \001(\003\022\014\n\004s3_6\030\006 \001(\003\022\014\n\004s3_7\030\007 \001(\004\022\014\n"
     "\004s3_8\030\010 \001(\004\022\014\n\004s3_9\030\t \001(\021\022\r\n\005s3_10\030\n \001(\021"
@@ -138,8 +140,9 @@ void protobuf_AddDesc_pb_5ftest_5f03_2eproto() {
     "\020 \001(\001\022\r\n\005s3_17\030\021 \001(\006\022\r\n\005s3_18\030\022 \001(\020\022\r\n\005s"
     "3_19\030\023 \001(\t\022\r\n\005s3_20\030\024 \001(\014\022\r\n\005s3_21\030\025 \003(\005"
     "\022\021\n\005s3_22\030\026 \003(\005B\002\020\001\022\r\n\005s3_23\030\027 \003(\t\022\022\n\005s3"
-    "_24\030\030 \001(\0132\003.S2\022\022\n\005s3_25\030\031 \003(\0132\003.S2*\"\n\002E1"
-    "\022\010\n\004E1_1\020\001\022\010\n\004E1_3\020\003\022\010\n\004E1_5\020\005", 510);
+    "_24\030\030 \001(\0132\003.S2\022\022\n\005s3_25\030\031 \003(\0132\003.S2\022\r\n\005s3"
+    "_26\030\032 \003(\007\022\r\n\005s3_27\030\033 \001(\005*\"\n\002E1\022\010\n\004E1_1\020\001"
+    "\022\010\n\004E1_3\020\003\022\010\n\004E1_5\020\005", 540);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "pb_test_03.proto", &protobuf_RegisterTypes);
   S2::default_instance_ = new S2();
@@ -485,6 +488,8 @@ const int S3::kS322FieldNumber;
 const int S3::kS323FieldNumber;
 const int S3::kS324FieldNumber;
 const int S3::kS325FieldNumber;
+const int S3::kS326FieldNumber;
+const int S3::kS327FieldNumber;
 #endif  // !_MSC_VER
 
 S3::S3()
@@ -530,6 +535,7 @@ void S3::SharedCtor() {
   s3_19_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   s3_20_ = const_cast< ::std::string*>(&::google::protobuf::internal::GetEmptyStringAlreadyInited());
   s3_24_ = NULL;
+  s3_27_ = 0;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -604,8 +610,11 @@ void S3::Clear() {
       }
     }
   }
-  if (has_s3_24()) {
-    if (s3_24_ != NULL) s3_24_->::S2::Clear();
+  if (_has_bits_[24 / 32] & 301989888) {
+    if (has_s3_24()) {
+      if (s3_24_ != NULL) s3_24_->::S2::Clear();
+    }
+    s3_27_ = 0;
   }
 
 #undef OFFSET_OF_FIELD_
@@ -615,6 +624,7 @@ void S3::Clear() {
   s3_22_.Clear();
   s3_23_.Clear();
   s3_25_.Clear();
+  s3_26_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
   mutable_unknown_fields()->Clear();
 }
@@ -1012,6 +1022,40 @@ bool S3::MergePartialFromCodedStream(
           goto handle_unusual;
         }
         if (input->ExpectTag(202)) goto parse_s3_25;
+        if (input->ExpectTag(213)) goto parse_s3_26;
+        break;
+      }
+
+      // repeated fixed32 s3_26 = 26;
+      case 26: {
+        if (tag == 213) {
+         parse_s3_26:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadRepeatedPrimitive<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_FIXED32>(
+                 2, 213, input, this->mutable_s3_26())));
+        } else if (tag == 210) {
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPackedPrimitiveNoInline<
+                   ::google::protobuf::uint32, ::google::protobuf::internal::WireFormatLite::TYPE_FIXED32>(
+                 input, this->mutable_s3_26())));
+        } else {
+          goto handle_unusual;
+        }
+        if (input->ExpectTag(213)) goto parse_s3_26;
+        if (input->ExpectTag(216)) goto parse_s3_27;
+        break;
+      }
+
+      // optional int32 s3_27 = 27;
+      case 27: {
+        if (tag == 216) {
+         parse_s3_27:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                 input, &s3_27_)));
+          set_has_s3_27();
+        } else {
+          goto handle_unusual;
+        }
         if (input->ExpectTag(512)) goto parse_s3_64;
         break;
       }
@@ -1216,6 +1260,17 @@ void S3::SerializeWithCachedSizes(
       25, this->s3_25(i), output);
   }
 
+  // repeated fixed32 s3_26 = 26;
+  for (int i = 0; i < this->s3_26_size(); i++) {
+    ::google::protobuf::internal::WireFormatLite::WriteFixed32(
+      26, this->s3_26(i), output);
+  }
+
+  // optional int32 s3_27 = 27;
+  if (has_s3_27()) {
+    ::google::protobuf::internal::WireFormatLite::WriteInt32(27, this->s3_27(), output);
+  }
+
   // optional sint64 s3_64 = 64;
   if (has_s3_64()) {
     ::google::protobuf::internal::WireFormatLite::WriteSInt64(64, this->s3_64(), output);
@@ -1387,6 +1442,17 @@ void S3::SerializeWithCachedSizes(
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
         25, this->s3_25(i), target);
+  }
+
+  // repeated fixed32 s3_26 = 26;
+  for (int i = 0; i < this->s3_26_size(); i++) {
+    target = ::google::protobuf::internal::WireFormatLite::
+      WriteFixed32ToArray(26, this->s3_26(i), target);
+  }
+
+  // optional int32 s3_27 = 27;
+  if (has_s3_27()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(27, this->s3_27(), target);
   }
 
   // optional sint64 s3_64 = 64;
@@ -1563,6 +1629,13 @@ int S3::ByteSize() const {
           this->s3_24());
     }
 
+    // optional int32 s3_27 = 27;
+    if (has_s3_27()) {
+      total_size += 2 +
+        ::google::protobuf::internal::WireFormatLite::Int32Size(
+          this->s3_27());
+    }
+
   }
   // repeated int32 s3_21 = 21;
   {
@@ -1606,6 +1679,13 @@ int S3::ByteSize() const {
         this->s3_25(i));
   }
 
+  // repeated fixed32 s3_26 = 26;
+  {
+    int data_size = 0;
+    data_size = 4 * this->s3_26_size();
+    total_size += 2 * this->s3_26_size() + data_size;
+  }
+
   if (!unknown_fields().empty()) {
     total_size +=
       ::google::protobuf::internal::WireFormat::ComputeUnknownFieldsSize(
@@ -1635,6 +1715,7 @@ void S3::MergeFrom(const S3& from) {
   s3_22_.MergeFrom(from.s3_22_);
   s3_23_.MergeFrom(from.s3_23_);
   s3_25_.MergeFrom(from.s3_25_);
+  s3_26_.MergeFrom(from.s3_26_);
   if (from._has_bits_[0 / 32] & (0xffu << (0 % 32))) {
     if (from.has_s3_1()) {
       set_s3_1(from.s3_1());
@@ -1711,6 +1792,9 @@ void S3::MergeFrom(const S3& from) {
     if (from.has_s3_24()) {
       mutable_s3_24()->::S2::MergeFrom(from.s3_24());
     }
+    if (from.has_s3_27()) {
+      set_s3_27(from.s3_27());
+    }
   }
   mutable_unknown_fields()->MergeFrom(from.unknown_fields());
 }
@@ -1761,6 +1845,8 @@ void S3::Swap(S3* other) {
     s3_23_.Swap(&other->s3_23_);
     std::swap(s3_24_, other->s3_24_);
     s3_25_.Swap(&other->s3_25_);
+    s3_26_.Swap(&other->s3_26_);
+    std::swap(s3_27_, other->s3_27_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
     _unknown_fields_.Swap(&other->_unknown_fields_);
     std::swap(_cached_size_, other->_cached_size_);
