@@ -49,6 +49,7 @@ int main(int argc, const char *argv[])
     { 
         std::cout << desc_s4->DebugString();
     }
+	desc_s4->options().GetExtension();
     
     //测试一下如何使用反射。
     const google::protobuf::Descriptor *desc_s3 = importer.pool()->FindMessageTypeByName("N01.N02.S3");

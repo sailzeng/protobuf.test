@@ -1,4 +1,13 @@
 
+#pragma warning ( disable : 4512)
+#pragma warning ( disable : 4514)
+#pragma warning ( disable : 4100)
+#pragma warning ( disable : 4820)
+#pragma warning ( disable : 4625)
+#pragma warning ( disable : 4626)
+#pragma warning ( disable : 4365)
+#pragma warning ( disable : 4710)
+
 #include <iostream>
 #include <fstream>
 
@@ -8,9 +17,10 @@
 #include <google/protobuf/dynamic_message.h>
 #include <google/protobuf/compiler/importer.h>
 
-#include "student_01.pb.h"
+#include "pb_test_01.pb.h"
 
 #pragma comment (lib, "libprotobuf.lib" )
+
 
 
 int test_main1(int argc, char *argv[])
@@ -64,8 +74,9 @@ int test_main1(int argc, char *argv[])
 
 
 
-int main(int argc, const char *argv[])
+int test_main4(int argc, const char *argv[])
 {
+	
     google::protobuf::compiler::DiskSourceTree sourceTree;
     //look up .proto file in current directory
     sourceTree.MapPath("", "./");
@@ -99,7 +110,7 @@ int main(int argc, const char *argv[])
 }
 
 
-int test_main2(int argc, char *argv[])
+int test_main2(int argc, const char *argv[])
 {
     Person p;
     p.set_id(1);
@@ -134,5 +145,32 @@ int test_main2(int argc, char *argv[])
     return 0;
 }
 
+
+//只要调用了set，默认值也会设置。
+int test_main3(int argc,const char *argv[])
+{
+	TestCompact test_a1;
+	if (test_a1.IsInitialized())
+	{
+		std::cout << "Serial size is" << test_a1.ByteSize() << std::endl;
+	}
+	test_a1.set_a(0);
+	if (test_a1.IsInitialized())
+	{
+		std::cout << "Serial size is" << test_a1.ByteSize() << std::endl;
+	}
+	test_a1.set_b(0);
+	if (test_a1.IsInitialized())
+	{
+		std::cout << "Serial size is" << test_a1.ByteSize() << std::endl;
+	}
+	return 0;
+}
+
+
+int main(int argc, const char *argv[])
+{
+	return test_main3(argc, argv);
+}
 
 

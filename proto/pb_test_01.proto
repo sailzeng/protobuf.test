@@ -29,3 +29,10 @@ message SchoolClass
 	repeated Person student_ = 2 ;
 }
 
+
+message TestCompact
+{
+    optional int32 a = 1 [default = 0];
+    optional int32 b = 2;
+    repeated int32 c = 3;
+}

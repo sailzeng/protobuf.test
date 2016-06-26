@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30723.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.25402.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "protobuf.test.01", "protobuf.test.01.vcxproj", "{F482B227-5E0F-4817-8697-0331B490038E}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "protobuf.test.02", "protobuf.test.02.vcxproj", "{7C32B51E-3B97-4886-AAF2-1E1796595018}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "protobuf.test.03", "protobuf.test.03.vcxproj", "{48AE6C88-AC84-4E2E-8C60-CAFE2ACEF791}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "protobuf.test.04", "protobuf.test.04.vcxproj", "{1F739200-E00D-4E0C-95F9-FD8C24398F9C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{48AE6C88-AC84-4E2E-8C60-CAFE2ACEF791}.Debug|Win32.Build.0 = Debug|Win32
 		{48AE6C88-AC84-4E2E-8C60-CAFE2ACEF791}.Release|Win32.ActiveCfg = Release|Win32
 		{48AE6C88-AC84-4E2E-8C60-CAFE2ACEF791}.Release|Win32.Build.0 = Release|Win32
+		{1F739200-E00D-4E0C-95F9-FD8C24398F9C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1F739200-E00D-4E0C-95F9-FD8C24398F9C}.Debug|Win32.Build.0 = Debug|Win32
+		{1F739200-E00D-4E0C-95F9-FD8C24398F9C}.Release|Win32.ActiveCfg = Release|Win32
+		{1F739200-E00D-4E0C-95F9-FD8C24398F9C}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

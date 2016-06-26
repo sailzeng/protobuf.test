@@ -35,6 +35,7 @@ void protobuf_ShutdownFile_pb_5ftest_5f01_2eproto();
 class Person;
 class Person_PhoneNumber;
 class SchoolClass;
+class TestCompact;
 
 enum Person_PhoneType {
   Person_PhoneType_MOBILE = 0,
@@ -406,6 +407,108 @@ class SchoolClass : public ::google::protobuf::Message {
 
   void InitAsDefaultInstance();
   static SchoolClass* default_instance_;
+};
+// -------------------------------------------------------------------
+
+class TestCompact : public ::google::protobuf::Message {
+ public:
+  TestCompact();
+  virtual ~TestCompact();
+
+  TestCompact(const TestCompact& from);
+
+  inline TestCompact& operator=(const TestCompact& from) {
+    CopyFrom(from);
+    return *this;
+  }
+
+  inline const ::google::protobuf::UnknownFieldSet& unknown_fields() const {
+    return _unknown_fields_;
+  }
+
+  inline ::google::protobuf::UnknownFieldSet* mutable_unknown_fields() {
+    return &_unknown_fields_;
+  }
+
+  static const ::google::protobuf::Descriptor* descriptor();
+  static const TestCompact& default_instance();
+
+  void Swap(TestCompact* other);
+
+  // implements Message ----------------------------------------------
+
+  TestCompact* New() const;
+  void CopyFrom(const ::google::protobuf::Message& from);
+  void MergeFrom(const ::google::protobuf::Message& from);
+  void CopyFrom(const TestCompact& from);
+  void MergeFrom(const TestCompact& from);
+  void Clear();
+  bool IsInitialized() const;
+
+  int ByteSize() const;
+  bool MergePartialFromCodedStream(
+      ::google::protobuf::io::CodedInputStream* input);
+  void SerializeWithCachedSizes(
+      ::google::protobuf::io::CodedOutputStream* output) const;
+  ::google::protobuf::uint8* SerializeWithCachedSizesToArray(::google::protobuf::uint8* output) const;
+  int GetCachedSize() const { return _cached_size_; }
+  private:
+  void SharedCtor();
+  void SharedDtor();
+  void SetCachedSize(int size) const;
+  public:
+  ::google::protobuf::Metadata GetMetadata() const;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  // optional int32 a = 1 [default = 0];
+  inline bool has_a() const;
+  inline void clear_a();
+  static const int kAFieldNumber = 1;
+  inline ::google::protobuf::int32 a() const;
+  inline void set_a(::google::protobuf::int32 value);
+
+  // optional int32 b = 2;
+  inline bool has_b() const;
+  inline void clear_b();
+  static const int kBFieldNumber = 2;
+  inline ::google::protobuf::int32 b() const;
+  inline void set_b(::google::protobuf::int32 value);
+
+  // repeated int32 c = 3;
+  inline int c_size() const;
+  inline void clear_c();
+  static const int kCFieldNumber = 3;
+  inline ::google::protobuf::int32 c(int index) const;
+  inline void set_c(int index, ::google::protobuf::int32 value);
+  inline void add_c(::google::protobuf::int32 value);
+  inline const ::google::protobuf::RepeatedField< ::google::protobuf::int32 >&
+      c() const;
+  inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
+      mutable_c();
+
+  // @@protoc_insertion_point(class_scope:TestCompact)
+ private:
+  inline void set_has_a();
+  inline void clear_has_a();
+  inline void set_has_b();
+  inline void clear_has_b();
+
+  ::google::protobuf::UnknownFieldSet _unknown_fields_;
+
+  ::google::protobuf::uint32 _has_bits_[1];
+  mutable int _cached_size_;
+  ::google::protobuf::int32 a_;
+  ::google::protobuf::int32 b_;
+  ::google::protobuf::RepeatedField< ::google::protobuf::int32 > c_;
+  friend void  protobuf_AddDesc_pb_5ftest_5f01_2eproto();
+  friend void protobuf_AssignDesc_pb_5ftest_5f01_2eproto();
+  friend void protobuf_ShutdownFile_pb_5ftest_5f01_2eproto();
+
+  void InitAsDefaultInstance();
+  static TestCompact* default_instance_;
 };
 // ===================================================================
 
@@ -817,6 +920,88 @@ inline ::google::protobuf::RepeatedPtrField< ::Person >*
 SchoolClass::mutable_student_() {
   // @@protoc_insertion_point(field_mutable_list:SchoolClass.student_)
   return &student__;
+}
+
+// -------------------------------------------------------------------
+
+// TestCompact
+
+// optional int32 a = 1 [default = 0];
+inline bool TestCompact::has_a() const {
+  return (_has_bits_[0] & 0x00000001u) != 0;
+}
+inline void TestCompact::set_has_a() {
+  _has_bits_[0] |= 0x00000001u;
+}
+inline void TestCompact::clear_has_a() {
+  _has_bits_[0] &= ~0x00000001u;
+}
+inline void TestCompact::clear_a() {
+  a_ = 0;
+  clear_has_a();
+}
+inline ::google::protobuf::int32 TestCompact::a() const {
+  // @@protoc_insertion_point(field_get:TestCompact.a)
+  return a_;
+}
+inline void TestCompact::set_a(::google::protobuf::int32 value) {
+  set_has_a();
+  a_ = value;
+  // @@protoc_insertion_point(field_set:TestCompact.a)
+}
+
+// optional int32 b = 2;
+inline bool TestCompact::has_b() const {
+  return (_has_bits_[0] & 0x00000002u) != 0;
+}
+inline void TestCompact::set_has_b() {
+  _has_bits_[0] |= 0x00000002u;
+}
+inline void TestCompact::clear_has_b() {
+  _has_bits_[0] &= ~0x00000002u;
+}
+inline void TestCompact::clear_b() {
+  b_ = 0;
+  clear_has_b();
+}
+inline ::google::protobuf::int32 TestCompact::b() const {
+  // @@protoc_insertion_point(field_get:TestCompact.b)
+  return b_;
+}
+inline void TestCompact::set_b(::google::protobuf::int32 value) {
+  set_has_b();
+  b_ = value;
+  // @@protoc_insertion_point(field_set:TestCompact.b)
+}
+
+// repeated int32 c = 3;
+inline int TestCompact::c_size() const {
+  return c_.size();
+}
+inline void TestCompact::clear_c() {
+  c_.Clear();
+}
+inline ::google::protobuf::int32 TestCompact::c(int index) const {
+  // @@protoc_insertion_point(field_get:TestCompact.c)
+  return c_.Get(index);
+}
+inline void TestCompact::set_c(int index, ::google::protobuf::int32 value) {
+  c_.Set(index, value);
+  // @@protoc_insertion_point(field_set:TestCompact.c)
+}
+inline void TestCompact::add_c(::google::protobuf::int32 value) {
+  c_.Add(value);
+  // @@protoc_insertion_point(field_add:TestCompact.c)
+}
+inline const ::google::protobuf::RepeatedField< ::google::protobuf::int32 >&
+TestCompact::c() const {
+  // @@protoc_insertion_point(field_list:TestCompact.c)
+  return c_;
+}
+inline ::google::protobuf::RepeatedField< ::google::protobuf::int32 >*
+TestCompact::mutable_c() {
+  // @@protoc_insertion_point(field_mutable_list:TestCompact.c)
+  return &c_;
 }
 
 
